@@ -73,12 +73,14 @@ document.addEventListener("keydown", (event) => {
 	}, 5000);
 
 	// Check for cheat codes
-	for (i in cheatCodes) {
-		if (keySequence.includes(i)) {
-			const cheat = cheatCodes[i];
-			getCheatAction(cheat)();
-			if (shouldClearSequence(cheat)) {
-				keySequence = "";
+	if (!["izombieverifynormal", "izombieverifywater"].includes(oS.Lvl)) {
+		for (i in cheatCodes) {
+			if (keySequence.includes(i)) {
+				const cheat = cheatCodes[i];
+				getCheatAction(cheat)();
+				if (shouldClearSequence(cheat)) {
+					keySequence = "";
+				}
 			}
 		}
 	}

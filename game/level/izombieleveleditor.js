@@ -526,139 +526,24 @@
 											downloadButton.style.display = "none";
 											levelDataElement.style.display = "none";
 											copyButtonElement.style.display = "none";
-											titleElement.innerText = "Saving...";
+											titleElement.innerText = "Loading...";
+											// download lvl as a backup
+											downloadBytesAsFile(encodeIZL3(cloneFromPlants(`Backup of "${l}" @ ${new Date().toISOString()}`, f)), `BACKUP_${l.replaceAll(" ", "_")}_${new Date().toISOString()}.izl3`);
 											alert(
 												"RULES:\n\n" +
 													"1. Playability Required - Your level must be completable. Test it before submitting to ensure it's actually possible to beat.\n" +
 													"2. Be Yourself - Don't pretend to be other community members or moderators when submitting levels.\n" +
 													"3. Keep It Family-Friendly - Level names, author names, and the level itself must all be appropriate for all ages. No inappropriate content or language."
 											);
-											const author = prompt("Author name:");
-											const newLevelData = encodeIZL3(cloneFromPlants(l, f, true));
-											titleElement.innerText = "Configuring...";
-											let serverConfig;
-											fetch(`${$User.Server.URL}/api/config`, {
-												headers: {
-													Accept: "application/msgpack",
-												},
-											})
-												.then((response) => {
-													if (!response.ok) {
-														throw new Error("Failed to get server configuration");
-													}
-													return response.arrayBuffer();
-												})
-												.then((config) => {
-													serverConfig = msgpack.deserialize(config);
-													let turnstileToken;
-													let container;
-													if (serverConfig.turnstileEnabled) {
-														container = document.createElement("div");
-														container.style.position = "absolute";
-														container.style.left = "50%";
-														container.style.top = "50%";
-														container.style.transform = "translate(-50%, -50%)";
-														container.style.zIndex = "1000";
-														container.id = "turnstile-container";
-
-														window.turnstile.render(container, {
-															sitekey: serverConfig.turnstileSiteKey,
-															callback(token) {
-																turnstileToken = token;
-															},
-														});
-													}
-													titleElement.innerText = "Please complete the verification";
-													$("dAll").appendChild(container);
-
-													// function to wait for turnstile token if enabled
-													function waitForTurnstileToken() {
-														return new Promise((resolve) => {
-															if (!serverConfig.turnstileEnabled) {
-																resolve(null);
-																return;
-															}
-
-															const checkToken = () => {
-																if (turnstileToken) {
-																	resolve(turnstileToken);
-																} else {
-																	setTimeout(checkToken, 500);
-																}
-															};
-															checkToken();
-														});
-													}
-
-													// wait for turnstile token or proceed immediately if disabled
-													waitForTurnstileToken().then((token) => {
-														titleElement.innerText = "Uploading...";
-
-														// prepare query parameters
-														const queryParams = new URLSearchParams();
-														queryParams.append("author", author || "Anonymous");
-														if (token) {
-															queryParams.append("turnstileResponse", token);
-														}
-
-														// upload level data as octet-stream
-														fetch(`${$User.Server.URL}/api/levels?${queryParams.toString()}`, {
-															method: "POST",
-															headers: {
-																"Content-Type": "application/octet-stream",
-															},
-															body: newLevelData,
-														})
-															.then((response) => {
-																if (!response.ok) {
-																	return response.json().then((data) => {
-																		throw new Error(
-																			data.error + (data.message ? ` (${data.message})` : "") || "Failed to upload level"
-																		);
-																	});
-																}
-																return response.json();
-															})
-															.then((data) => {
-																console.log("Level uploaded successfully:", data);
-																titleElement.innerText = `Level uploaded successfully! ID: ${data.id}`;
-
-																// show close button again
-																closeButton.style.display = "";
-																closeButton.style.top = "75%";
-																closeButton.style.top = "50%";
-																closeButton.style.left = "50%";
-																closeButton.style.transform = "translate(-50%, -50%)";
-															})
-															.catch((error) => {
-																console.error("Error uploading level:", error);
-																titleElement.innerText = `Upload failed: ${error.message}`;
-
-																// show close button again
-																closeButton.style.display = "";
-															})
-															.finally(() => {
-																// remove turnstile container if it exists
-																const turnstileContainer = document.getElementById("turnstile-container");
-																if (turnstileContainer) {
-																	turnstileContainer.remove();
-																}
-															});
-													});
-												})
-												.catch((error) => {
-													console.error("Error fetching server configuration:", error);
-													titleElement.innerText = "Failed to load server configuration";
-
-													setTimeout(() => {
-														closeButton.style.display = "";
-														uploadButton.style.display = "";
-														downloadButton.style.display = "";
-														levelDataElement.style.display = "";
-														copyButtonElement.style.display = "";
-														titleElement.innerText = "Here's your level data - keep this somewhere safe!";
-													}, 3000);
-												});
+											alert("Now sending you to verification. Beat your level to prove it's playable!");
+											// put level data into levelDataToLoad for the verification level to read
+											levelDataToLoad = cloneFromPlants(l, f, true);
+											// check if water or normal
+											if (oS.NowLevel === "NPool") {
+												SelectModal("izombieverifywater");
+											} else {
+												SelectModal("izombieverifynormal");
+											}
 										};
 										uploadButton.style.zIndex = "1000";
 										// uploadButton.style.display = "none"; // hide for now
