@@ -528,7 +528,10 @@
 											copyButtonElement.style.display = "none";
 											titleElement.innerText = "Loading...";
 											// download lvl as a backup
-											downloadBytesAsFile(encodeIZL3(cloneFromPlants(`Backup of "${l}" @ ${new Date().toISOString()}`, f)), `BACKUP_${l.replaceAll(" ", "_")}_${new Date().toISOString()}.izl3`);
+											downloadBytesAsFile(
+												encodeIZL3(cloneFromPlants(`Backup of "${l}" @ ${new Date().toISOString()}`, f)),
+												`BACKUP_${l.replaceAll(" ", "_")}_${new Date().toISOString()}.izl3`
+											);
 											alert(
 												"RULES:\n\n" +
 													"1. Playability Required - Your level must be completable. Test it before submitting to ensure it's actually possible to beat.\n" +
