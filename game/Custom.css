@@ -1498,3 +1498,11 @@ body.game-paused #cover {
 #dMenu1 {
 	font-family: "dwarventodcraft" !important;
 }
+#dProduceZombie p {
+	margin-bottom: 12px;
+	margin-top: 9px;
+}
+#dProducePlant p {
+	margin-bottom: 12px;
+	margin-top: 9px;
+}

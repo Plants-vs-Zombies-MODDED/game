@@ -13,8 +13,10 @@
 			"256": "img/256x256.png",
 			"512": "img/512x512.png"
 		},
-		"default_title": "Click to open the popup",
-		"default_popup": "game/index.html"
+		"default_title": "Click to play"
+	},
+	"background": {
+		"service_worker": "background.js"
 	},
 	"offline_enabled": true,
 	"description": "Play Plant vs. Zombies MODDED Official as a Chrome extension - Also can Play without Internet, try it now!",

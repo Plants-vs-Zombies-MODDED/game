@@ -1255,7 +1255,10 @@ td.HandBookZombie {
 }
 
 #dProducePlant::-webkit-scrollbar {
-	width: 9px;
+	width: 6px;
+}
+#dProducePlant:hover::-webkit-scrollbar {
+	width: 8px;
 }
 #dProducePlant::-webkit-scrollbar-thumb {
 	background: #954f19;
@@ -1384,14 +1387,15 @@ td.HandBookZombie {
 }
 
 #dProduceZombie {
+	margin-top: -5px;
 	margin-left: 40px;
 	margin-right: auto;
-	width: 69%;
-	height: 150px;
+	width: 265px;
+	height: 159px;
 	position: relative;
 	z-index: 257;
 	text-align: left;
-	font-size: 15px;
+	font-size: 16px;
 	line-height: 16px;
 	font-family: Tahoma;
 	overflow-y: auto;
@@ -1399,6 +1403,9 @@ td.HandBookZombie {
 }
 
 #dProduceZombie::-webkit-scrollbar {
+	width: 7px;
+}
+#dProduceZombie:hover::-webkit-scrollbar {
 	width: 10px;
 }
 #dProduceZombie::-webkit-scrollbar-thumb {

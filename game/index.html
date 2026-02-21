@@ -5,18 +5,6 @@
 		<meta http-equiv="X-Frame-Options" content="DENY" />
 		<title>Plants vs. Zombies - MODDED Official</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script>
-			// Scale document to 0.9 if running in an extension (localStorage is unavailable)
-			try {
-				localStorage.setItem("__test__", "1");
-				localStorage.removeItem("__test__");
-				console.log("Not running in an extension, no scaling applied");
-			} catch (e) {
-				console.log("Running in an extension, scaling down to 90%");
-				document.documentElement.style.transform = "scale(0.9)";
-				document.documentElement.style.transformOrigin = "top center";
-			}
-		</script>
 		<link rel="icon" href="https://pvzm.net/game/images/gameicon2.png" type="image/png" />
 		<script>
 			window.addEventListener("beforeunload", function (e) {

@@ -1972,23 +1972,23 @@ var InitHandBookZCard = function () {
 	let html = "";
 	const zombies = [
 		oZombie,
+		oFlagZombie,
 		oConeheadZombie,
 		oPoleVaultingZombie,
 		oBucketheadZombie,
-		oFlagZombie,
 		oNewspaperZombie,
 		oScreenDoorZombie,
 		oFootballZombie,
-		oHeiFootballZombie,
 		oDancingZombie,
 		oBackupDancer,
 		oDuckyTubeZombie1,
 		oSnorkelZombie,
 		oZomboni,
 		oDolphinRiderZombie,
-		oBalloonZombie,
 		oJackinTheBoxZombie,
+		oBalloonZombie,
 		oImp,
+		oHeiFootballZombie,
 		oCZombie,
 		oCConeheadZombie,
 		oCBucketheadZombie,
@@ -2035,6 +2035,7 @@ var ViewProducePlant = function (plantClass) {
 		$("pHandBookPlant").style.backgroundImage = "url(" + proto.PicArr[proto.AlmanacGif] + ")";
 		$("pHandBookPlant").style.backgroundPosition = proto.BookHandPosition || "50% " + (45 + proto.height / 4) + "%";
 		$("dProducePlant").innerHTML = proto.Produce;
+		$("dProducePlant").scrollTop = 0;
 		innerText($("dHandBookPlantName"), proto.CName);
 		innerText($("spSunNum"), proto.SunNum);
 		innerText($("spCoolTime"), proto.coolTime + "s");
@@ -2047,6 +2048,7 @@ var ViewProduceZombie = function (zombieClass) {
 	const proto = zombieClass.prototype;
 	$("pHandBookZombie").style.background = "url(" + proto.PicArr[proto.AlmanacGif] + ") no-repeat scroll " + proto.BookHandPosition;
 	$("dProduceZombie").innerHTML = proto.Produce;
+	$("dProduceZombie").scrollTop = 0;
 	innerText($("dHandBookZombieName"), proto.CName);
 	$("pZombieBack").style.background = "url('images/interface/Almanac_Ground" + proto.BookHandBack + ".jpg')";
 };
