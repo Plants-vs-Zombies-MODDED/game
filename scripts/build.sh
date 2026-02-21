@@ -3,6 +3,9 @@ set -e
 
 npm install -g oxlint oxfmt esbuild html-minifier-terser
 
+# stamp
+echo "$CF_PAGES_COMMIT_SHA" > game/images/Zombies/CX/v.html
+
 # lint & format
 oxlint . || true
 oxfmt --write . "**/*.{js,md,html,css,yml}"
