@@ -129,3 +129,7 @@ software under these terms.
 
 **Use** means anything you do with the software requiring one
 of your licenses.
+
+---
+
+Required Notice: Plants vs. Zombies: MODDED (https://github.com/Plants-vs-Zombies-MODDED/game)
