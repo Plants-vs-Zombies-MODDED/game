@@ -1,8 +1,9 @@
-name: Deploy (Staging)
+name: Format & stamp
 
 on:
     push:
       branches:
+        - main
         - staging
     workflow_dispatch:
 
@@ -10,13 +11,9 @@ permissions:
     contents: write
     deployments: write
 
-concurrency:
-  group: "cloudflare-pages-staging"
-  cancel-in-progress: false
-
 jobs:
-    build-and-deploy:
-        runs-on: ubuntu-latest
+    format-and-stamp:
+        runs-on: blacksmith-4vcpu-ubuntu-2404
         env:
             PNPM_HOME: /home/runner/.local/share/pnpm
         steps:
@@ -26,7 +23,7 @@ jobs:
                   fetch-depth: 1
 
             - name: Setup Node.js & pnpm
-              uses: actions/setup-node@v3
+              uses: actions/setup-node@v4
               with:
                   node-version: "lts/*"
 
@@ -41,12 +38,11 @@ jobs:
               with:
                   path: |
                       ~/.local/share/pnpm/global
-                      ~/.local/share/pnpm/store
-                  key: pnpm-global-${{ hashFiles('.github/workflows/main.yml') }}
+                  key: pnpm-global-${{ hashFiles('pnpm-lock.yaml') }}
                   restore-keys: pnpm-global-
 
             - name: Install dependencies
-              run: pnpm add -g oxlint oxfmt esbuild html-minifier-terser wrangler@3
+              run: pnpm add -g oxlint oxfmt esbuild html-minifier-terser
 
             - name: Lint, format & version stamp
               run: |
@@ -61,32 +57,8 @@ jobs:
                   git config user.name github-actions
                   git config user.email github-actions@github.com
                   git add .
-                  git commit -m "Format \"$COMMIT_MSG\"
+                  git commit -m "Format \"$COMMIT_MSG\" [CF-Pages-Skip]
                   Original commit: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
                   
                   Co-authored-by: ${{ github.actor }} <$AUTHOR_EMAIL>" || exit 0
                   git push
-
-            - name: Bundle & minify all assets
-              run: |
-                  esbuild game/js/CPlants.js \
-                    --bundle --minify --sourcemap --sources-content=true \
-                    --outfile=game/js/CPlants.js --allow-overwrite
-
-                  esbuild $(find . -type f \( -name "*.js" -o -name "*.css" \) \
-                    -not -path "./node_modules/*" -not -name "CPlants.js") \
-                    --minify --sourcemap --sources-content=true \
-                    --outdir=. --allow-overwrite &
-
-                  find . -type f -name "*.html" -not -path "./node_modules/*" | \
-                    xargs -P4 -I{} html-minifier-terser \
-                      --collapse-whitespace --remove-comments --remove-tag-whitespace \
-                      --minify-css true --minify-js true -o {} {} &
-
-                  wait
-
-            - name: Deploy to Cloudflare Pages
-              run: wrangler pages deploy . --project-name=pvz-staging --commit-dirty=true --branch=production
-              env:
-                  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-                  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
