@@ -7,8 +7,7 @@
 	"author": "",
 	"scripts": {
 		"lint": "oxlint",
-		"fix": "oxlint --fix",
-		"build": "bash scripts/build.sh"
+		"fix": "oxlint --fix"
 	},
 	"devDependencies": {
 		"html-minifier-terser": "^7.2.0",
