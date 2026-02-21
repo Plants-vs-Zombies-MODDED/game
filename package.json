@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"keywords": [],
-	"license": "CC-BY-NC-ND-4.0",
+	"license": "PolyForm-Noncommercial-1.0.0",
 	"author": "",
 	"scripts": {
 		"lint": "oxlint",
