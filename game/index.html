@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 	<head>
 		<link rel="stylesheet" href="Custom.css" />
@@ -155,24 +156,39 @@
 		</div>
 		<div id="dSurface" class="WindowFrame">
 			<div id="iSurfaceBackground">
-				<img src="images/interface/Surface.jpg" border="0" />
+				<img src="images/interface/Surface.png" border="0" width="900" />
 				<div
-					style="position: absolute; left: 641px; top: 466px; width: 83px; height: 61px; cursor: url(images/interface/Pointer.cur), pointer"
+					style="position: absolute; left: 625px; top: 444px; width: 83px; height: 61px; cursor: url(images/interface/Pointer.cur), pointer"
 					onclick="ShowOptions()"
 				></div>
 				<div
-					style="position: absolute; left: 718px; top: 512px; width: 72px; height: 46px; cursor: url(images/interface/Pointer.cur), pointer"
+					style="position: absolute; left: 703px; top: 486px; width: 72px; height: 46px; cursor: url(images/interface/Pointer.cur), pointer"
 					onmouseenter="PreloadMenu('note')"
 					onclick="ShowHelp(this)"
 				></div>
 				<div
-					style="position: absolute; left: 800px; top: 495px; width: 79px; height: 53px; cursor: url(images/interface/Pointer.cur), pointer"
+					style="position: absolute; left: 775px; top: 470px; width: 79px; height: 53px; cursor: url(images/interface/Pointer.cur), pointer"
 					onclick="
 						SetNone($('dSurface'));
 						PlaySound2('tap');
 					"
 				></div>
 				<div style="position: absolute; width: 350px; height: 150px; left: 468px; top: 82px"></div>
+				<p
+					id="dAdventureLevel"
+					style="
+						position: absolute;
+						text-align: center;
+						top: 42px;
+						font-size: 20px;
+						left: 580px;
+						color: #fff;
+						font-family: &quot;dwarventodcraft&quot; !important;
+						width: 100px;
+					"
+				>
+					1-1
+				</p>
 				<div
 					class="adventure0"
 					id="dAdventure"
@@ -191,15 +207,13 @@
 				<div
 					class="riddle"
 					onmouseover="this.style.backgroundPosition = 'bottom'"
-					onmousemove="ViewGenericMouseover(`<span style='color:red'><b>NEW!</b></span> <b>ONLINE</b> I, Zombie Levels!`, event)"
-					onmouseout="SetHidden($('dTitle'))"
 					onmouseout="this.style.backgroundPosition = 'top'"
 					onclick="ShowRiddleGame()"
 				></div>
 				<div class="Sunflower_trophy">
 					<script>
 						document.write(
-							'<img onclick="window.open(\'https://github.com/Plants-vs-Zombies-MODDED/game\')" title="Producer" alt="3" src="images/interface/Sunflower_trophy32.png">'
+							'<img onclick="window.open(\'https://github.com/Plants-vs-Zombies-MODDED/game\')" title="Producer" alt="3" src="images/interface/Sunflower_trophy32.svg">'
 						);
 					</script>
 				</div>
@@ -211,6 +225,7 @@
 				></div>
 				<div id="ZombieHand"></div>
 				<div id="dNameDiv0">
+					<p style="font-size: 20px; text-align: center; margin-top: 91px; color: #fff5c8">Guest!</p>
 					<div
 						id="dNameDiv1"
 						onmouseover="this.style.backgroundPosition = 'bottom'"
@@ -570,7 +585,7 @@
 										s +=
 											'<td height="139" valign="top" onclick="SelectModal(\'' +
 											ar[n] +
-											'\')"><div><img src="images/interface/' +
+											'\')"><div style="padding-top: 9px;"><img src="images/interface/' +
 											ar[n + 2] +
 											'"></div><div class="list">' +
 											ar[n + 1] +
@@ -659,27 +674,15 @@
 									s = "";
 								for (n = 0; n < l; n += 3) {
 									i % 5 == 0 && (s += "<tr>");
-									if (ar[n] == "izombiemenu") {
-										s +=
-											'<td height="139" valign="top" onmousemove="ViewGenericMouseover(`<span style=&quot;color:red&quot;><b>NEW!</b></span> <b>ONLINE</b> I, Zombie Levels!`,event)" onmouseout="SetHidden($(\'dTitle\'))" onclick="SelectModal(\'' +
-											ar[n] +
-											'\')"><div><img src="images/interface/' +
-											ar[n + 2] +
-											'"></div><div class="list">' +
-											ar[n + 1] +
-											"</div></td>";
-										(i + 1) % 5 == 0 ? ((s += "</tr>"), (i = 0)) : ++i;
-									} else {
-										s +=
-											'<td height="139" valign="top" onclick="SelectModal(\'' +
-											ar[n] +
-											'\')"><div><img src="images/interface/' +
-											ar[n + 2] +
-											'"></div><div class="list">' +
-											ar[n + 1] +
-											"</div></td>";
-										(i + 1) % 5 == 0 ? ((s += "</tr>"), (i = 0)) : ++i;
-									}
+									s +=
+										'<td height="139" valign="top" onclick="SelectModal(\'' +
+										ar[n] +
+										'\')"><div style="padding-top: 9px;"><img src="images/interface/' +
+										ar[n + 2] +
+										'"></div><div class="list">' +
+										ar[n + 1] +
+										"</div></td>";
+									(i + 1) % 5 == 0 ? ((s += "</tr>"), (i = 0)) : ++i;
 								}
 								if (i != 0) {
 									while (--i) s += "<td>　</td>";

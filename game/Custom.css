@@ -1501,3 +1501,7 @@ body.game-paused #cover {
 	margin-bottom: 12px;
 	margin-top: 9px;
 }
+#dMenu0,
+#dMenu1 {
+	font-family: "dwarventodcraft" !important;
+}

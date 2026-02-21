@@ -4489,3 +4489,10 @@ function createZombie(zombieClass, row, column) {
 		zombie
 	);
 }
+
+function getLevelString(level) {
+	if (!level) {
+		level = 1;
+	}
+	return `${Math.ceil(level / 10)}-${((level - 1) % 10) + 1}`;
+}

@@ -393,7 +393,7 @@ td.HandBookZombie {
 #dAdventure {
 	position: absolute;
 	left: 472px;
-	top: 80px;
+	top: 40px;
 	width: 331px;
 	height: 146px;
 	cursor: url(images/interface/Pointer.cur), pointer;
@@ -414,7 +414,7 @@ td.HandBookZombie {
 	background: url() no-repeat;
 	_background: url() no-repeat;
 	left: 474px;
-	top: 203px;
+	top: 163px;
 	width: 313px;
 	height: 133px;
 	cursor: url(images/interface/Pointer.cur), pointer;
@@ -423,7 +423,7 @@ td.HandBookZombie {
 #iSurfaceBackground .riddle {
 	position: absolute;
 	left: 478px;
-	top: 303px;
+	top: 263px;
 	width: 286px;
 	height: 122px;
 	cursor: url(images/interface/Pointer.cur), pointer;
@@ -469,8 +469,7 @@ td.HandBookZombie {
 	top: -260px;
 	width: 293px;
 	height: 260px;
-	background: url(images/interface/SelectorScreen_WoodSign1_32.png) no-repeat;
-	_background: url(images/interface/SelectorScreen_WoodSign1_32.png) no-repeat;
+	background: url(images/interface/WoodSign2_Top.png) no-repeat;
 }
 
 #dNameDiv1 {
@@ -480,8 +479,7 @@ td.HandBookZombie {
 	top: 96px;
 	width: 291px;
 	height: 71px;
-	background: url(images/interface/SelectorScreen_WoodSign2_32.png) no-repeat;
-	_background: url(images/interface/SelectorScreen_WoodSign2_8.png) no-repeat;
+	background: url(images/interface/WoodSign2_Accountless.png) no-repeat;
 }
 
 #dNameDiv2 {
@@ -490,8 +488,7 @@ td.HandBookZombie {
 	top: 136px;
 	width: 293px;
 	height: 150px;
-	background: url(images/interface/SelectorScreen_WoodSign3_32.png) no-repeat;
-	_background: url(images/interface/SelectorScreen_WoodSign3_8.png) no-repeat;
+	background: url(images/interface/WoodSign2_Bottom.png) no-repeat;
 	overflow: hidden;
 }
 
@@ -521,7 +518,7 @@ td.HandBookZombie {
 	display: none;
 }
 
-#dOptionsMenuBack {
+#dOptionsMenuback {
 	position: absolute;
 	text-align: center;
 	left: 244px;
@@ -1797,8 +1794,8 @@ dd.yellow {
 
 .Sunflower_trophy {
 	position: absolute;
-	left: 15px;
-	top: 310px;
+	left: 89px;
+	top: 363px;
 	width: 157px;
 	height: 269px;
 	overflow: hidden;
@@ -1909,7 +1906,7 @@ dd.yellow {
 }
 
 #dOptionsMenu {
-	line-height: 30px;
+	line-height: 0;
 	position: absolute;
 	width: 98.5%;
 	height: 100%;
@@ -1922,7 +1919,7 @@ dd.yellow {
 	color: #fff;
 	text-decoration: none;
 	font-family: Tahoma;
-	font-size: 20;
+	font-size: 20px;
 }
 
 #dOptionsMenu .OMd0 {
@@ -1939,6 +1936,7 @@ dd.yellow {
 
 #dOptionsMenu .OMd0 .OMd1 div {
 	height: 30px;
+	line-height: 30px;
 }
 
 #dOptionsMenu .OMd0 .OMd1 div label {
@@ -2108,7 +2106,7 @@ dd.yellow {
 #dRiddle0 .list,
 #dMini0 .list,
 #dMini1 .list {
-	margin-top: 15px;
+	margin-top: 11px;
 	height: 45px;
 }
 

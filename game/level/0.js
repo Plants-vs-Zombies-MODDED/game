@@ -9,11 +9,12 @@ oS.Init({
 			a + "OptionsMenuback" + b + ".png",
 			a + "OptionsBackButton" + b + ".png",
 			a + "Sunflower_trophy" + b + ".png",
-			a + "Surface.jpg",
+			a + "Surface.png",
 			a + "Help.png",
-			a + "SelectorScreen_WoodSign3_" + b + ".png",
-			a + "SelectorScreen_WoodSign2_" + b + ".png",
-			a + "SelectorScreen_WoodSign1_" + b + ".png",
+			a + "WoodSign2_Top.png",
+			a + "WoodSign2_Accountless.png",
+			a + "WoodSign2_Account.png",
+			a + "WoodSign2_Bottom",
 			//      a + "SelectorScreenSurvival_" + b + ".png",
 			a + "SelectorScreen_Almanac_" + b + ".png",
 			a + "Logo.png",
@@ -161,3 +162,4 @@ oS.Init({
 });
 $("ZombieHand").style.display = "none";
 StopSound2("jackinthebox");
+$("dAdventureLevel").textContent = getLevelString(StorageUtil.getItem("level"));
