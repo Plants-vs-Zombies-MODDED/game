@@ -1493,11 +1493,6 @@ body.game-paused #cover {
 .credit-name {
 	text-align: left;
 }
-
-#dMenu0,
-#dMenu1 {
-	font-family: "dwarventodcraft" !important;
-}
 #dProduceZombie p {
 	margin-bottom: 12px;
 	margin-top: 9px;
