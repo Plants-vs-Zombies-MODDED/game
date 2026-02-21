@@ -1,0 +1,38 @@
+name: Require Approval
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, review_requested]
+  pull_request_review:
+    types: [submitted, dismissed]
+
+jobs:
+  check-approval:
+    name: Check for PR Approval
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for approved review
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const reviews = await github.rest.pulls.listReviews({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+            });
+
+            // Find the latest review state per reviewer
+            const latestByUser = {};
+            for (const review of reviews.data) {
+              if (review.state === 'APPROVED' || review.state === 'CHANGES_REQUESTED' || review.state === 'DISMISSED') {
+                latestByUser[review.user.login] = review.state;
+              }
+            }
+
+            const approved = Object.values(latestByUser).some(state => state === 'APPROVED');
+
+            if (!approved) {
+              core.setFailed('This PR requires at least one approved review before merging.');
+            } else {
+              core.info('PR has at least one approval. Good to go.');
+            }
