@@ -154,7 +154,7 @@ oS.Init({
 						ClearChild(this);
 					}),
 					(b.src = "" + Math.random()))
-				: console.log("Version", oS.Version) /*$("").innerHTML = 4/* oS.Version */;
+				: console.log("Version", oS.Version); /*$("").innerHTML = 4/* oS.Version */
 		})();
 		$("dServer") && SetBlock($("dServer"));
 	},
