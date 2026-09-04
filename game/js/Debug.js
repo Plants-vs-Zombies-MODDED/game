@@ -261,35 +261,35 @@ cheatsTab.addButton({ title: "Spawn Balloonatic" }).on("click", () => {
 
 const cheatsMap = {
 	fast: {
-		title: '1000x speed (fast)',
+		title: "1000x speed (fast)",
 		visible: true,
 	},
 	balloon: {
-		title: 'spawn balloonatic (balloon)',
+		title: "spawn balloonatic (balloon)",
 		visible: true,
 	},
 	re: {
-		title: 'reload current level (re)',
+		title: "reload current level (re)",
 		visible: true,
 	},
 	handy: {
-		title: 'open handbook (handy)',
+		title: "open handbook (handy)",
 		visible: true,
 	},
 	j: {
-		title: 'spawn sun at mouse (j)',
+		title: "spawn sun at mouse (j)",
 		visible: true,
 	},
 	abminArrowUp: {
-		title: 'open admin page (abmin↑)',
+		title: "open admin page (abmin↑)",
 		visible: true,
 	},
 	mustache: {
-		title: 'mustache alert!!! (mustache)',
+		title: "mustache alert!!! (mustache)",
 		visible: true,
 	},
 	moustache: {
-		title: 'moustache alert!!! (moustache)',
+		title: "moustache alert!!! (moustache)",
 		visible: true,
 	},
 	ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba: {
@@ -297,11 +297,11 @@ const cheatsMap = {
 		visible: true,
 	},
 	trickedout: {
-		title: 'alert tricked out (trickedout)',
+		title: "alert tricked out (trickedout)",
 		visible: true,
 	},
 	debig: {
-		title: 'open debug menu (debig)',
+		title: "open debug menu (debig)",
 		visible: false,
 	},
 };
