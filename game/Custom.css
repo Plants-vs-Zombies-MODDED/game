@@ -341,6 +341,7 @@
 }
 body {
 	min-height: 530px;
+	zoom: 1.11111;
 }
 label {
 	color: white !important;
