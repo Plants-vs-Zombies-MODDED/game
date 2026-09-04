@@ -2470,6 +2470,9 @@ var GrowPlant = function (plants, c, r, rType, cType) {
 	const coolTime = proto.coolTime;
 	const laneType = oGd.$LF[rType];
 
+	console.log(plants);
+	console.log(c, r, rType, cType);
+
 	// Check if the plant can grow at the selected location
 	if (proto.CanGrow(plants, rType, cType)) {
 		// Play planting audio based on soil type
@@ -4057,6 +4060,7 @@ const allPlantsStringArray = [
 	"oBigChomper",
 	"oFlamesMushroom",
 	"oBalloon",
+	"oImitater",
 ];
 
 const allPlantsArray = () => {
