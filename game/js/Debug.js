@@ -243,7 +243,7 @@ const sun = cheatsTab.addBlade({
 	value: 50,
 	format: Math.round,
 });
-/*
+
 cheatsTab.addButton({ title: "Gain Sun" }).on("click", () => {
 	const id = AppearSun($User.Mouse.x - 45, $User.Mouse.y + 45, Math.round(sun.value), false);
 
@@ -253,11 +253,6 @@ cheatsTab.addButton({ title: "Gain Sun" }).on("click", () => {
 });
 
 cheatsTab.addBlade({ view: "separator" });
-
-cheatsTab.addButton({ title: "Spawn Balloonatic" }).on("click", () => {
-	oBalloon.prototype.Birth();
-});
-*/
 
 const cheatsMap = {
 	fast: {
