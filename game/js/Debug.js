@@ -179,10 +179,14 @@ function dynamicArrayFolder(container, array, title, { expanded = false, itemExp
 const osFolder = dynamicObjectFolder(variablesTab, oS, "oS");
 const userFolder = dynamicObjectFolder(variablesTab, $User, "$User");
 const soundsFolder = dynamicArrayFolder(variablesTab, playingSounds, "playingSounds", { itemExpanded: true });
+const plantsFolder = dynamicObjectFolder(variablesTab, $P, "$P");
+const zombiesFolder = dynamicObjectFolder(variablesTab, $Z, "$Z");
 
 window.oS = osFolder.observed;
 window.$User = userFolder.observed;
 playingSounds = soundsFolder.observed;
+window.$P = plantsFolder.observed;
+window.$Z = zombiesFolder.observed;
 
 // level tab
 
@@ -239,7 +243,7 @@ const sun = cheatsTab.addBlade({
 	value: 50,
 	format: Math.round,
 });
-
+/*
 cheatsTab.addButton({ title: "Gain Sun" }).on("click", () => {
 	const id = AppearSun($User.Mouse.x - 45, $User.Mouse.y + 45, Math.round(sun.value), false);
 
@@ -252,4 +256,61 @@ cheatsTab.addBlade({ view: "separator" });
 
 cheatsTab.addButton({ title: "Spawn Balloonatic" }).on("click", () => {
 	oBalloon.prototype.Birth();
+});
+*/
+
+const cheatsMap = {
+	fast: {
+		title: '1000x speed (fast)',
+		visible: true,
+	},
+	balloon: {
+		title: 'spawn balloonatic (balloon)',
+		visible: true,
+	},
+	re: {
+		title: 'reload current level (re)',
+		visible: true,
+	},
+	handy: {
+		title: 'open handbook (handy)',
+		visible: true,
+	},
+	j: {
+		title: 'spawn sun at mouse (j)',
+		visible: true,
+	},
+	abminArrowUp: {
+		title: 'open admin page (abmin↑)',
+		visible: true,
+	},
+	mustache: {
+		title: 'mustache alert!!! (mustache)',
+		visible: true,
+	},
+	moustache: {
+		title: 'moustache alert!!! (moustache)',
+		visible: true,
+	},
+	ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba: {
+		title: "konami code (↑↑↓↓←→←→ba)",
+		visible: true,
+	},
+	trickedout: {
+		title: 'alert tricked out (trickedout)',
+		visible: true,
+	},
+	debig: {
+		title: 'open debug menu (debig)',
+		visible: false,
+	},
+};
+
+Object.entries(cheatCodes).forEach(([name, action]) => {
+	if (!cheatsMap[name]?.visible) {
+		return;
+	}
+	cheatsTab.addButton({ title: cheatsMap[name].title || name }).on("click", () => {
+		action();
+	});
 });

@@ -2139,6 +2139,46 @@ var SelectCard = function (name, retry, playTap = true) {
 			NewImg(0, imgEle.src, "width:100px;height:120px", newCard);
 			innerText(NewEle("sSunNum" + name, "span", 0, 0, newCard), proto.SunNum);
 			imgEle.style.filter = "grayscale(1) brightness(1.15)";
+			if (playTap) {
+				newCard.style.visibility = "hidden";
+				// create animation image
+				const animContainer = document.createElement("div");
+				animContainer.style.position = "absolute";
+				animContainer.style.width = "63px";
+				animContainer.style.height = "37.8px";
+				animContainer.style.pointerEvents = "none";
+				animContainer.style.overflow = "hidden";
+				const selfRect = cardDom.getBoundingClientRect();
+				animContainer.style.left = selfRect.left + "px";
+				animContainer.style.top = selfRect.top + "px";
+				animContainer.style.zIndex = 9999;
+				document.body.appendChild(animContainer);
+				console.log(animContainer);
+
+				const animImg = document.createElement("img");
+				animImg.src = imgEle.src;
+				animImg.style.width = "100%";
+				animContainer.appendChild(animImg);
+
+				// Animate the image to move to the new card position in dCardList
+				const targetRect = newCard.getBoundingClientRect();
+				const deltaX = targetRect.left - selfRect.left;
+				const deltaY = targetRect.top - selfRect.top;
+
+				animContainer.animate(
+					[
+						{ transform: "translate(0, 0)", width: "63px", height: "37.8px" },
+						{ transform: `translate(${deltaX}px, ${deltaY}px)`, width: "90px", height: "54px" },
+					],
+					{
+						duration: 200,
+						easing: "ease-in-out",
+					}
+				).onfinish = () => {
+					newCard.style.visibility = "";
+					document.body.removeChild(animContainer);
+				};
+			}
 		}
 	} else {
 		cardObj.Select = 0;

@@ -40,7 +40,7 @@ let cheatCodes = {
 		alert("get tricked (out)!");
 		// PlaySound2("tap");
 	},
-	debug: () => {
+	debig: () => {
 		import("./Debug.js");
 	},
 };

@@ -27,7 +27,7 @@ let sorts = {
 	featured: "Featured",
 	recent: "Recent",
 	plays: "Popular",
-	favorites: "Favorite",
+	favorites: "Player's Choice",
 };
 const SORT_STORAGE_KEY = "pvz.izombieonline.sort";
 

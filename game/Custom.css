@@ -1514,3 +1514,7 @@ body.game-paused #cover {
 	margin-bottom: 12px;
 	margin-top: 9px;
 }
+
+#debugMenu * {
+	font-family: 'Courier New', Courier, monospace !important;
+}
