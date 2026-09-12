@@ -386,7 +386,7 @@ oS.Init(
 									.then((data) => {
 										console.log("Level uploaded successfully:", data);
 										titleElement.innerText = `Level uploaded successfully! ID: ${data.id}`;
-										if (posthog) {
+										if (window.posthog) {
 											posthog.capture("level_upload", {
 												id: data.id,
 											});

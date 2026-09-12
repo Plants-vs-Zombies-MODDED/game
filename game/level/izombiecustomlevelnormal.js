@@ -139,7 +139,7 @@ if (typeof levelDataToLoad === "undefined") {
 		SelectModal(0);
 	}
 }
-if (posthog) {
+if (window.posthog) {
 	posthog.capture("level_load_izombie", {
 		name: levelDataToLoad.name,
 		author: levelDataToLoad.author || "unknown",
