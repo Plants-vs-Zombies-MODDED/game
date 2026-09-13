@@ -8,7 +8,7 @@ export var oSeedSpikeweed = InheritO(CPlants, {
 	SunNum: 0,
 	Stature: -1,
 	canEat: 0,
-	PicArr: ["images/Card/Plants/Spikeweed.png", "images/Plants/Spikeweed/0.png", "images/Plants/Spikeweed/Spikeweed.webp"],
+	PicArr: ["images/Card/Plants/Spikeweed.webp", "images/Plants/Spikeweed/0.png", "images/Plants/Spikeweed/Spikeweed.webp"],
 	Attack: 20,
 	ArZ: {},
 	Tooltip: "Pops tires and hurts zombies that step on it",

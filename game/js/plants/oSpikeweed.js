@@ -10,7 +10,7 @@ export var oSpikeweed = InheritO(CPlants, {
 	canEat: 0,
 	BookHandPosition: "50% 78%",
 	PicArr: [
-		"images/Card/Plants/Spikeweed.png",
+		"images/Card/Plants/Spikeweed.webp",
 		"images/Plants/Spikeweed/0.png",
 		"images/Plants/Spikeweed/Spikeweed.webp",
 		"images/Plants/Spikeweed/SpikeweedAttack.webp",
