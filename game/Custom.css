@@ -935,7 +935,7 @@ input[type="checkbox"]:checked {
 	user-select: none;
 	display: none;
 	position: absolute;
-	top: 512px;
+	top: calc(50vh + 212px);
 	left: 50%;
 	margin-left: -300px;
 	cursor: url(images/interface/Cursor.cur), default;

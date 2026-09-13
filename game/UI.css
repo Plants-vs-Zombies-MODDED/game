@@ -1,28 +1,33 @@
-﻿/* briannetod.ttf */
+/* briannetod.ttf */
 @font-face {
 	font-family: "briannetod";
 	src: url("fonts/briannetod2.ttf");
 }
+
 /* dwarventodcraft.ttf */
 @font-face {
 	font-family: "dwarventodcraft";
 	src: url("fonts/dwarventodcraft.ttf");
 }
+
 /* houseofterrormedium.ttf */
 @font-face {
 	font-family: "houseofterrormedium";
 	src: url("fonts/houseofterrormedium.ttf");
 }
+
 /* pico12.ttf */
 @font-face {
 	font-family: "pico12";
 	src: url("fonts/pico12.ttf");
 }
+
 /* continuumbold.ttf */
 @font-face {
 	font-family: "continuumbold";
 	src: url("fonts/continuumbold.ttf");
 }
+
 body {
 	user-select: none;
 	-moz-user-select: none;
@@ -33,11 +38,14 @@ body {
 	font-family: Tahoma, Verdana, fixedsys;
 	overflow-x: hidden;
 	font-variant-ligatures: none;
+	min-height: 100vh;
 }
+
 body.game-paused * {
 	animation-play-state: paused !important;
 	image-animation: paused !important;
 }
+
 td {
 	font-family: Verdana;
 	font-size: 12px;
@@ -46,6 +54,7 @@ td {
 div {
 	left: 0;
 }
+
 div[class^="tp-"],
 .WindowFrame {
 	left: initial;
@@ -103,6 +112,7 @@ td.HandBookZombie {
 	background-color: rgba(91, 67, 46, 0);
 	font-family: Tahoma;
 }
+
 #DivTeachBar {
 	position: absolute;
 	width: 900px !important;
@@ -157,12 +167,11 @@ td.HandBookZombie {
 }
 
 .WindowFrame {
-	transform: scale(0.9);
-	top: -30px;
+	top: calc(50vh - 300px);
 	width: 900px;
 	height: 600px;
 	overflow: hidden;
-	left: calc(50% - 450px);
+	left: calc(50vw - 450px);
 	position: absolute;
 }
 
@@ -218,7 +227,7 @@ td.HandBookZombie {
 	z-index: 255;
 	left: 50%;
 	margin-left: -340px;
-	top: 0;
+	top: calc(50vh - 300px);
 	height: 45px;
 }
 
@@ -306,7 +315,7 @@ td.HandBookZombie {
 	z-index: 255;
 	left: 50%;
 	margin-left: -340px;
-	top: 0;
+	top: calc(50vh - 300px);
 	height: 45px;
 }
 
@@ -771,28 +780,34 @@ td.HandBookZombie {
 	z-index: 20;
 	background: url("images/interface/SeedChooser_Background.png") no-repeat;
 }
+
 @keyframes selectCardShow {
 	from {
 		transform: translateY(600px);
 	}
+
 	to {
 		transform: translateY(0);
 	}
 }
+
 @keyframes selectCardHide {
 	from {
 		transform: translateY(0);
 		visibility: visible;
 	}
+
 	to {
 		transform: translateY(600px);
 		visibility: hidden;
 	}
 }
+
 #dSelectCard.show {
 	visibility: visible;
 	animation: selectCardShow 0.2s cubic-bezier(0.61, 1, 0.88, 1) forwards;
 }
+
 #dSelectCard.hide {
 	visibility: visible;
 	animation: selectCardHide 0.2s cubic-bezier(0.12, 0, 0.39, 0) forwards;
@@ -901,20 +916,25 @@ td.HandBookZombie {
 	0% {
 		translate: var(--sun-start);
 	}
+
 	100% {
 		translate: var(--sun-end);
 	}
 }
+
 @keyframes sun-collect-scale {
+
 	0%,
 	70% {
 		transform: scale(1);
 		opacity: 1;
 	}
+
 	90% {
 		transform: scale(0.5);
 		opacity: 0.3;
 	}
+
 	100% {
 		transform: scale(0.5);
 		opacity: 0;
@@ -947,9 +967,9 @@ td.HandBookZombie {
 #dMenu {
 	visibility: hidden;
 	position: absolute;
-	top: 3;
+	top: calc(50vh - 297px);
 	left: 50%;
-	margin-left: 185px;
+	margin-left: 228px;
 	cursor: url(images/interface/Pointer.cur), pointer;
 	width: 226px;
 	height: 41px;
@@ -1169,6 +1189,7 @@ td.HandBookZombie {
 #dHandBookPCard::-webkit-scrollbar {
 	width: 10px;
 }
+
 #dHandBookPCard::-webkit-scrollbar-thumb {
 	background: #954f19;
 	border-radius: 10px;
@@ -1177,10 +1198,12 @@ td.HandBookZombie {
 		inset 1px 1px 2px 0 #b6703b;
 	background: linear-gradient(133deg, #954f19, #904b17);
 }
+
 #dHandBookPCard::-webkit-scrollbar-thumb:hover {
 	/*	background: #a4571b; */
 	background: linear-gradient(133deg, #a4571b, #9a5018);
 }
+
 #dHandBookPCard::-webkit-scrollbar-track {
 	/*	background: #e4a865; */
 	border-radius: 10px;
@@ -1261,9 +1284,11 @@ td.HandBookZombie {
 #dProducePlant::-webkit-scrollbar {
 	width: 6px;
 }
+
 #dProducePlant:hover::-webkit-scrollbar {
 	width: 8px;
 }
+
 #dProducePlant::-webkit-scrollbar-thumb {
 	background: #954f19;
 	border-radius: 10px;
@@ -1272,10 +1297,12 @@ td.HandBookZombie {
 		inset 1px 1px 2px 0 #b6703b;
 	background: linear-gradient(133deg, #954f19, #904b17);
 }
+
 #dProducePlant::-webkit-scrollbar-thumb:hover {
 	/*	background: #a4571b; */
 	background: linear-gradient(133deg, #a4571b, #9a5018);
 }
+
 #dProducePlant::-webkit-scrollbar-track {
 	/*	background: #e4a865; */
 	border-radius: 10px;
@@ -1289,10 +1316,12 @@ td.HandBookZombie {
 #spCoolTime {
 	color: #cc241d;
 }
+
 #spSunNum {
 	float: left;
 	width: 45%;
 }
+
 #spCoolTime {
 	float: left;
 	width: 10%;
@@ -1409,9 +1438,11 @@ td.HandBookZombie {
 #dProduceZombie::-webkit-scrollbar {
 	width: 7px;
 }
+
 #dProduceZombie:hover::-webkit-scrollbar {
 	width: 10px;
 }
+
 #dProduceZombie::-webkit-scrollbar-thumb {
 	/*	background: #5f606f; */
 	border-radius: 3px;
@@ -1420,10 +1451,12 @@ td.HandBookZombie {
 		inset 1px 1px 2px 0 rgba(255, 255, 255, 0.5);
 	background: linear-gradient(130deg, #5f606f, #525362);
 }
+
 #dProduceZombie::-webkit-scrollbar-thumb:hover {
 	/*	background: #4e4f5b; */
 	background: linear-gradient(130deg, #4e4f5b, #40414b);
 }
+
 #dProduceZombie::-webkit-scrollbar-track {
 	/*	background: #ded5f7; */
 	border-radius: 3px;
@@ -1436,13 +1469,13 @@ td.HandBookZombie {
 #dNewPlant {
 	visibility: hidden;
 	position: absolute;
-	top: -30px;
-	left: calc(50% - 450px);
+	top: calc(50vh - 300px);
+	left: calc(50vw - 450px);
 	width: 900px;
-	height: 603px;
+	height: 600px;
+	overflow: hidden;
 	background: url(images/interface/AwardScreen_Back.jpg) no-repeat center center;
 	background-size: 100% 100%;
-	transform: scale(0.9);
 }
 
 #dNewPlant .card {
@@ -1521,9 +1554,8 @@ td.HandBookZombie {
 	background: #000;
 	color: #fff;
 	position: absolute;
-	left: 50%;
-	margin-left: -442px;
-	top: 10px;
+	left: calc(50vw - 442px);
+	top: calc(50vh - 290px);
 	width: 865px;
 	height: 550px;
 	visibility: hidden;

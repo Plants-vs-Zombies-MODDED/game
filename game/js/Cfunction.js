@@ -414,12 +414,12 @@ var oS = {
 	},
 	LoadAudio: $User.HTML5
 		? function () {
-				let i = oS.AudioArr.length;
-				while (i--) {
-					NewAudio({ source: oS.AudioArr[i] });
-				}
+			let i = oS.AudioArr.length;
+			while (i--) {
+				NewAudio({ source: oS.AudioArr[i] });
 			}
-		: function () {},
+		}
+		: function () { },
 	InitPn(arr) {
 		const ele = ($Pn[arr[0]] = NewEle(0, "div", "position:absolute"));
 		NewImg(0, ShadowPNG, arr[2], ele);
@@ -428,63 +428,63 @@ var oS = {
 	},
 	LoadImage: $User.Browser.IE
 		? function (src, callback, args) {
-				const img = new Image();
-				img.onreadystatechange = function () {
-					if (img.readyState === "complete") {
+			const img = new Image();
+			img.onreadystatechange = function () {
+				if (img.readyState === "complete") {
+					callback(args, 1);
+				}
+			};
+			img.onerror = function () {
+				img.onreadystatechange = null;
+				img.title = src;
+				callback(args, 0);
+			};
+			img.src = src;
+		}
+		: function (src, callback, args) {
+			const img = new Image();
+			img.src = src;
+			if (img.complete) {
+				callback(args, 1);
+			} else {
+				img.onload = function () {
+					if (img.complete) {
 						callback(args, 1);
 					}
 				};
 				img.onerror = function () {
-					img.onreadystatechange = null;
 					img.title = src;
 					callback(args, 0);
 				};
-				img.src = src;
 			}
-		: function (src, callback, args) {
-				const img = new Image();
-				img.src = src;
-				if (img.complete) {
-					callback(args, 1);
-				} else {
-					img.onload = function () {
-						if (img.complete) {
-							callback(args, 1);
-						}
-					};
-					img.onerror = function () {
-						img.title = src;
-						callback(args, 0);
-					};
-				}
-			},
+		},
 	LoadScript: $User.Browser.IE
 		? function (id, src, callback, parent, args) {
-				const script = NewEle(id, "script", 0, { type: "text/javascript" });
-				script.onreadystatechange = function () {
-					if (script.readyState === "loaded" || script.readyState === "complete") {
-						script.onreadystatechange = null;
-						callback(args, 1);
-					}
-				};
-				script.onerror = function () {
+			const script = NewEle(id, "script", 0, { type: "text/javascript" });
+			script.onreadystatechange = function () {
+				if (script.readyState === "loaded" || script.readyState === "complete") {
 					script.onreadystatechange = null;
-					callback(args, 0);
-				};
-				script.src = src;
-				parent.appendChild(script);
-			}
-		: function (id, src, callback, parent, args) {
-				const script = NewEle(id, "script", 0, { type: "text/javascript" });
-				script.onload = function () {
 					callback(args, 1);
-				};
-				script.onerror = function () {
-					callback(args, 0);
-				};
-				script.src = src;
-				parent.appendChild(script);
-			},
+				}
+			};
+			script.onerror = function () {
+				script.onreadystatechange = null;
+				callback(args, 0);
+			};
+			script.src = src;
+			parent.appendChild(script);
+		}
+		: function (id, src, callback, parent, args) {
+			const script = NewEle(id, "script", 0, { type: "text/javascript" });
+			script.onload = function () {
+				callback(args, 1);
+			};
+			script.onerror = function () {
+				callback(args, 0);
+			};
+			script.src = src;
+			parent.appendChild(script);
+		},
 	CheckImg(b, a) {
 		const self = oS;
 		if (self.AccessNum > self.PicNum || !self.MustAllReady) {
@@ -517,7 +517,7 @@ var oS = {
 		titleDiv.style.cursor = "url(images/interface/Cursor.cur),default";
 
 		SetHidden($("dFlagMeterContent"), dFlagMeter);
-		$("dFlagMeter").style.top = "490px";
+		$("dFlagMeter").style.top = "calc(50vh + 250px)";
 		$("sFlagMeterTitleF").innerHTML = $("dFlagMeterTitleB").innerHTML = config.LevelName;
 		$("imgFlagHead").style.left = "139px";
 		$("imgFlagMeterFull").style.clip = "rect(0,auto,auto,157px)";
@@ -913,7 +913,7 @@ var oP = {
 				}
 			};
 		} else {
-			self.MonPrgs = function () {};
+			self.MonPrgs = function () { };
 		}
 
 		if (!config || !config.FlagToEnd) {
@@ -944,9 +944,9 @@ var oP = {
 		for (let flagIdx in largeFlags) {
 			Math.floor(flagIdx) < totalFlags
 				? SetStyle(largeFlags[flagIdx], {
-						visibility: "visible",
-						left: 150 - (flagIdx - 1) * step + "px",
-					})
+					visibility: "visible",
+					left: 150 - (flagIdx - 1) * step + "px",
+				})
 				: SetVisible(largeFlags[flagIdx]);
 		}
 
@@ -1047,7 +1047,7 @@ var oP = {
 
 		while (remainingLvl > 0) {
 			if (maxIdx && maxLvl > remainingLvl) {
-				while (--maxIdx && zombiePool[maxIdx].prototype.Lvl > remainingLvl) {}
+				while (--maxIdx && zombiePool[maxIdx].prototype.Lvl > remainingLvl) { }
 				poolLen = maxIdx + 1;
 				maxLvl = zombiePool[maxIdx].prototype.Lvl;
 			}
@@ -1725,8 +1725,8 @@ var WhichMouseButton = function (e) {
 var GroundOnmousedown = function (e) {
 	e = window.event || e;
 	var zoom = parseFloat(document.body.style.zoom) || 1;
-	const x = (e.clientX / zoom - EDAlloffsetLeft) / 0.9;
-	const y = (e.clientY / zoom - EDAlloffsetTop) / 0.9;
+	const x = e.clientX / zoom - EDAlloffsetLeft;
+	const y = e.clientY / zoom - EDAlloffsetTop;
 
 	const cellX = ChosePlantX(x);
 	const cellY = ChosePlantY(y);
@@ -1799,13 +1799,13 @@ var KeyBoardGrowPlant = function (e, mode) {
 	}
 };
 
-var GroundOnmousemove = function () {};
+var GroundOnmousemove = function () { };
 
 var GroundOnmousemove1 = function (e) {
 	e = window.event || e;
 	var zoom = parseFloat(document.body.style.zoom) || 1;
-	const x = (e.clientX / zoom - EDAlloffsetLeft) / 0.9;
-	const y = (e.clientY / zoom - EDAlloffsetTop) / 0.9;
+	const x = e.clientX / zoom - EDAlloffsetLeft;
+	const y = e.clientY / zoom - EDAlloffsetTop;
 
 	const cardIdx = oS.ChoseCard;
 	const cellX = ChosePlantX(x);
@@ -1837,8 +1837,8 @@ var GroundOnmousemove1 = function (e) {
 var GroundOnmousemove2 = function (e) {
 	e = window.event || e;
 	var zoom = parseFloat(document.body.style.zoom) || 1;
-	const x = (e.clientX / zoom - EDAlloffsetLeft) / 0.9;
-	const y = (e.clientY / zoom - EDAlloffsetTop) / 0.9;
+	const x = e.clientX / zoom - EDAlloffsetLeft;
+	const y = e.clientY / zoom - EDAlloffsetTop;
 
 	const cellX = ChosePlantX(x);
 	const cellY = ChosePlantY(y);
@@ -2144,16 +2144,15 @@ var SelectCard = function (name, retry, playTap = true) {
 				// create animation image
 				const animContainer = document.createElement("div");
 				animContainer.style.position = "absolute";
-				animContainer.style.width = "63px";
-				animContainer.style.height = "37.8px";
+				const selfRect = cardDom.getBoundingClientRect();
+				animContainer.style.width = selfRect.width + "px";
+				animContainer.style.height = selfRect.height + "px";
 				animContainer.style.pointerEvents = "none";
 				animContainer.style.overflow = "hidden";
-				const selfRect = cardDom.getBoundingClientRect();
 				animContainer.style.left = selfRect.left + "px";
 				animContainer.style.top = selfRect.top + "px";
 				animContainer.style.zIndex = 9999;
 				document.body.appendChild(animContainer);
-				console.log(animContainer);
 
 				const animImg = document.createElement("img");
 				animImg.src = imgEle.src;
@@ -2167,8 +2166,8 @@ var SelectCard = function (name, retry, playTap = true) {
 
 				animContainer.animate(
 					[
-						{ transform: "translate(0, 0)", width: "63px", height: "37.8px" },
-						{ transform: `translate(${deltaX}px, ${deltaY}px)`, width: "90px", height: "54px" },
+						{ transform: "translate(0, 0)", width: selfRect.width + "px", height: selfRect.height + "px" },
+						{ transform: `translate(${deltaX}px, ${deltaY}px)`, width: targetRect.width + "px", height: targetRect.height + "px" },
 					],
 					{
 						duration: 200,
@@ -2303,8 +2302,11 @@ var ViewPlantTitle = function (index) {
 	}
 
 	titleDiv.innerHTML = html;
+	const rect = EDAll.getBoundingClientRect();
+	EDAlloffsetLeft = rect.left;
+	EDAlloffsetTop = rect.top;
 	SetStyle(titleDiv, {
-		top: 60 * index + "px",
+		top: EDAlloffsetTop + 60 * index + "px",
 		left: EDAlloffsetLeft + 100 + "px",
 	});
 };
@@ -2417,8 +2419,8 @@ var ChosePlant = function (e, index) {
 	PlaySound2("seedlift");
 	e = window.event || e;
 	var zoom = parseFloat(document.body.style.zoom) || 1;
-	const x = (e.clientX / zoom - EDAlloffsetLeft) / 0.9;
-	const y = (e.clientY / zoom - EDAlloffsetTop) / 0.9;
+	const x = e.clientX / zoom - EDAlloffsetLeft;
+	const y = e.clientY / zoom - EDAlloffsetTop;
 
 	const proto = card.PName.prototype;
 	const len = ArCard.length;
@@ -2459,7 +2461,7 @@ var CancelPlant = function () {
 	ClearChild($("MovePlant"), $("MovePlantAlpha"));
 	oS.Chose = 0;
 	MonitorCard();
-	GroundOnmousemove = function () {};
+	GroundOnmousemove = function () { };
 };
 
 var ShovelPlant = function (data) {
@@ -2477,8 +2479,8 @@ var ChoseShovel = function (e) {
 	PlaySound2("shovel");
 	if (WhichMouseButton(e) < 2) {
 		var zoom = parseFloat(document.body.style.zoom) || 1;
-		const x = (e.clientX / zoom - EDAlloffsetLeft) / 0.9;
-		const y = (e.clientY / zoom - EDAlloffsetTop) / 0.9;
+		const x = e.clientX / zoom - EDAlloffsetLeft;
+		const y = e.clientY / zoom - EDAlloffsetTop;
 		SetHidden($("imgShovel"));
 		NewImg("tShovel", "images/interface/Shovel/0.gif", `left:${x - 10}px;top:${y - 17}px;z-index:1`, EDAll);
 		oS.Chose = -1;
@@ -2495,7 +2497,7 @@ var CancelShovel = function (e) {
 	if (prevId) {
 		SetAlpha($(prevId).childNodes[1], 100, 1);
 	}
-	GroundOnmousemove = function () {};
+	GroundOnmousemove = function () { };
 };
 
 var StopBubble = function (e) {
@@ -3418,7 +3420,7 @@ var ClearChild = function () {
 			let child = arguments[i];
 			child.parentNode.removeChild(child);
 			child = null;
-		} catch (e) {}
+		} catch (e) { }
 	}
 };
 
@@ -3460,11 +3462,11 @@ var SetVisible = function () {
 
 var SetAlpha = $User.Browser.IE6
 	? function (ele, val, opacity) {
-			ele.style.filter = "alpha(opacity=" + val + ")";
-		}
+		ele.style.filter = "alpha(opacity=" + val + ")";
+	}
 	: function (ele, val, opacity) {
-			ele.style.opacity = opacity;
-		};
+		ele.style.opacity = opacity;
+	};
 
 var SetStyle = function (ele, styles) {
 	const s = ele.style;
@@ -3572,7 +3574,7 @@ var EditEle = function (ele, attrs, styles, props, parent) {
 };
 
 var NewO = function (proto, constructor) {
-	constructor = function () {};
+	constructor = function () { };
 	constructor.prototype = proto;
 	return constructor;
 };
@@ -3585,7 +3587,7 @@ var SetPrototype = function (child, parent) {
 };
 
 var InheritO = function (Parent, properties, arrayProps, child, parentArr, childArr) {
-	const Child = function () {};
+	const Child = function () { };
 	Child.prototype = new Parent();
 	if (properties) {
 		SetPrototype(Child, properties);
@@ -3667,7 +3669,7 @@ var ImgSpriter = function (id, cardId, config, frameIdx, callback) {
 	}
 };
 
-var Ajax = function () {};
+var Ajax = function () { };
 
 Date.prototype.format = function (fmt) {
 	const o = {
@@ -3692,25 +3694,25 @@ Date.prototype.format = function (fmt) {
 
 var NewMusic = $User.HTML5
 	? function (src) {
-			NewAudio({ autoplay: true, loop: true, source: src });
-		}
+		NewAudio({ autoplay: true, loop: true, source: src });
+	}
 	: function (src) {
-			if (!oS.Silence) {
-				$("oEmbed").innerHTML = "";
-			}
-		};
+		if (!oS.Silence) {
+			$("oEmbed").innerHTML = "";
+		}
+	};
 
 var PauseMusic = $User.HTML5
 	? function () {
-			const audio = oAudio[oS.LoadMusic];
-			if (audio) {
-				audio.currentTime = 0;
-				audio.pause();
-			}
+		const audio = oAudio[oS.LoadMusic];
+		if (audio) {
+			audio.currentTime = 0;
+			audio.pause();
 		}
+	}
 	: function () {
-			$("oEmbed").innerHTML = "";
-		};
+		$("oEmbed").innerHTML = "";
+	};
 
 var StartAdventure = function (level) {
 	const handDiv = $("ZombieHand");
@@ -3776,140 +3778,140 @@ var PausedAudioArr = [];
 
 var NewAudio = $User.HTML5
 	? function (config) {
-			const src = config.source;
-			if (oAudio[src]) {
-				return;
-			}
-
-			const audio = document.createElement("audio");
-			const types = { mp3: "audio/mpeg" };
-			const formats = ["mp3"];
-			let i = formats.length;
-
-			audio.autoplay = !!config.autoplay;
-
-			if (config.loop) {
-				audio.addEventListener(
-					"ended",
-					() => {
-						audio.play();
-					},
-					false
-				);
-			}
-
-			while (i--) {
-				let source = document.createElement("source");
-				source.type = types[formats[i]];
-				source.src = "audio/" + src + ".mp3";
-				audio.appendChild(source);
-			}
-
-			audio.preload = config.preload === undefined ? "auto" : ["auto", "meta", "none"][config.preload];
-			audio.muted = oS.Silence;
-
-			if (config.callback) {
-				audio.addEventListener("canplaythrough", config.callback, false);
-			}
-
-			return (oAudio[src] = audio);
+		const src = config.source;
+		if (oAudio[src]) {
+			return;
 		}
-	: function () {};
+
+		const audio = document.createElement("audio");
+		const types = { mp3: "audio/mpeg" };
+		const formats = ["mp3"];
+		let i = formats.length;
+
+		audio.autoplay = !!config.autoplay;
+
+		if (config.loop) {
+			audio.addEventListener(
+				"ended",
+				() => {
+					audio.play();
+				},
+				false
+			);
+		}
+
+		while (i--) {
+			let source = document.createElement("source");
+			source.type = types[formats[i]];
+			source.src = "audio/" + src + ".mp3";
+			audio.appendChild(source);
+		}
+
+		audio.preload = config.preload === undefined ? "auto" : ["auto", "meta", "none"][config.preload];
+		audio.muted = oS.Silence;
+
+		if (config.callback) {
+			audio.addEventListener("canplaythrough", config.callback, false);
+		}
+
+		return (oAudio[src] = audio);
+	}
+	: function () { };
 
 var PlayMusic = $User.HTML5
 	? function (src) {
-			let audio = oAudio[src];
-			if (audio) {
-				try {
-					audio.currentTime = 0;
-				} catch (e) {}
-				audio.play();
-			} else {
-				NewMusic(src);
-				oAudio[src].play();
-			}
-		}
-	: function (src) {
+		let audio = oAudio[src];
+		if (audio) {
+			try {
+				audio.currentTime = 0;
+			} catch (e) { }
+			audio.play();
+		} else {
 			NewMusic(src);
-		};
+			oAudio[src].play();
+		}
+	}
+	: function (src) {
+		NewMusic(src);
+	};
 
 var PlayAudioLegacy = $User.HTML5
 	? function (src, loop) {
-			const audio = oAudio[src];
-			if (audio) {
-				audio.loop = !!loop;
-				audio.play();
-			} else {
-				NewAudio({ source: src, loop: !!loop }).play();
-			}
+		const audio = oAudio[src];
+		if (audio) {
+			audio.loop = !!loop;
+			audio.play();
+		} else {
+			NewAudio({ source: src, loop: !!loop }).play();
 		}
-	: function () {};
+	}
+	: function () { };
 
 var PlayAudio = $User.HTML5
 	? function (src, loop) {
-			let audio = oAudio[src];
-			if (!audio) {
-				audio = NewAudio({ source: src, loop: !!loop });
-				oAudio[src] = audio;
-			} else {
-				audio.loop = !!loop;
-			}
-			audio.currentTime = 0;
-			audio.play();
+		let audio = oAudio[src];
+		if (!audio) {
+			audio = NewAudio({ source: src, loop: !!loop });
+			oAudio[src] = audio;
+		} else {
+			audio.loop = !!loop;
 		}
-	: function () {};
+		audio.currentTime = 0;
+		audio.play();
+	}
+	: function () { };
 
 var PauseAudio = $User.HTML5
 	? function (src) {
-			oAudio[src].pause();
-		}
-	: function () {};
+		oAudio[src].pause();
+	}
+	: function () { };
 
 var StopMusic = $User.HTML5
 	? function () {
-			const audio = oAudio[oS.LoadMusic];
-			try {
-				audio.currentTime = 0;
-			} catch (e) {}
-			if (audio) {
-				audio.pause();
-			}
+		const audio = oAudio[oS.LoadMusic];
+		try {
+			audio.currentTime = 0;
+		} catch (e) { }
+		if (audio) {
+			audio.pause();
 		}
-	: function () {};
+	}
+	: function () { };
 
 var StopAudio = $User.HTML5
 	? function (src) {
-			const audio = oAudio[src];
-			try {
-				audio.currentTime = 0;
-			} catch (e) {}
-			try {
-				audio.pause();
-			} catch (e) {}
-		}
-	: function () {};
+		const audio = oAudio[src];
+		try {
+			audio.currentTime = 0;
+		} catch (e) { }
+		try {
+			audio.pause();
+		} catch (e) { }
+	}
+	: function () { };
 
 var AllAudioPaused = $User.HTML5
 	? function () {
-			for (let key in oAudio) {
-				let audio = oAudio[key];
-				if (!(audio.paused || audio.ended)) {
-					PausedAudioArr.push(key);
-					audio.pause();
-				}
+		for (let key in oAudio) {
+			let audio = oAudio[key];
+			if (!(audio.paused || audio.ended)) {
+				PausedAudioArr.push(key);
+				audio.pause();
 			}
 		}
-	: function () {};
+	}
+	: function () { };
 
 var AllAudioPauseCanceled = $User.HTML5
 	? function () {
-			let i = PausedAudioArr.length;
-			while (i--) {
-				oAudio[PausedAudioArr[i]].play();
-			}
-			PausedAudioArr.length = 0;
+		let i = PausedAudioArr.length;
+		while (i--) {
+			oAudio[PausedAudioArr[i]].play();
 		}
-	: function () {};
+		PausedAudioArr.length = 0;
+	}
+	: function () { };
 
 var AllAudioMuted = function () {
 	for (let key in oAudio) {
@@ -3933,19 +3935,19 @@ var AllAudioMuteCanceled = function () {
 
 var CheckSilence = $User.HTML5
 	? function (checkbox) {
-			const val = checkbox.checked ? 1 : 0;
-			if (val !== oS.Silence) {
-				addCookie("JSPVZSilence", (oS.Silence = val));
-				val ? AllAudioMuted() : AllAudioMuteCanceled();
-			}
+		const val = checkbox.checked ? 1 : 0;
+		if (val !== oS.Silence) {
+			addCookie("JSPVZSilence", (oS.Silence = val));
+			val ? AllAudioMuted() : AllAudioMuteCanceled();
 		}
+	}
 	: function (checkbox) {
-			const val = checkbox.checked ? 1 : 0;
-			if (val !== oS.Silence) {
-				addCookie("JSPVZSilence", (oS.Silence = val));
-				val ? PauseMusic() : NewMusic(oS.StartGameMusic);
-			}
-		};
+		const val = checkbox.checked ? 1 : 0;
+		if (val !== oS.Silence) {
+			addCookie("JSPVZSilence", (oS.Silence = val));
+			val ? PauseMusic() : NewMusic(oS.StartGameMusic);
+		}
+	};
 
 var AppearCard = function (x, y, PlantClass, moveType, duration) {
 	const id = "dCard" + Math.random();
@@ -4285,7 +4287,7 @@ var CPlants = NewO({
 			EDPZ
 		);
 	},
-	PrivateBirth(a) {},
+	PrivateBirth(a) { },
 	getTriggerRange(a, b, c) {
 		return [[b, oS.W, 0]];
 	},
@@ -4341,7 +4343,7 @@ var CPlants = NewO({
 	AttackCheck2(a) {
 		return a.Altitude > 0;
 	},
-	PrivateDie(a) {},
+	PrivateDie(a) { },
 	BoomDie() {
 		var a = this;
 		var b = a.id;
@@ -4443,7 +4445,7 @@ var easeInOutExpo = function (x) {
 	return x === 0
 		? 0
 		: // oxlint-disable-next-line no-nested-ternary
-			x === 1
+		x === 1
 			? 1
 			: x < 0.5
 				? Math.pow(2, 20 * x - 10) / 2
@@ -4498,7 +4500,7 @@ var easeInOutElastic = function (x) {
 	return x === 0
 		? 0
 		: // oxlint-disable-next-line no-nested-ternary
-			x === 1
+		x === 1
 			? 1
 			: x < 0.5
 				? -(Math.pow(2, 20 * x - 10) * Math.sin((20 * x - 11.125) * c5)) / 2

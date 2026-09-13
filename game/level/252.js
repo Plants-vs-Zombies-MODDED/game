@@ -109,15 +109,15 @@ oS.Init(
 			PlaySound2("seedlift");
 			a = window.event || a;
 			var f = ArCard[oS.ChoseCard];
-			var e = a.clientX - EDAlloffsetLeft + EBody.scrollLeft || EElement.scrollLeft;
-			var d = a.clientY + EBody.scrollTop || EElement.scrollTop;
+			var e = a.clientX - EDAlloffsetLeft + (EBody.scrollLeft || EElement.scrollLeft);
+			var d = a.clientY - EDAlloffsetTop + (EBody.scrollTop || EElement.scrollTop);
 			var c = f.PName.prototype;
 			oS.Chose = 1;
 			EditImg(
 				NewImg(
 					"MovePlant",
 					c.PicArr[c.StaticGif],
-					"left:" + e - 0.5 * (c.beAttackedPointL + c.beAttackedPointR) + "px;top:" + d + 20 - c.height + "px;z-index:254",
+					`left:${e - 0.5 * (c.beAttackedPointL + c.beAttackedPointR)}px;top:${d + 20 - c.height}px;z-index:254`,
 					EDAll
 				).cloneNode(false),
 				"MovePlantAlpha",
@@ -174,7 +174,10 @@ oS.Init(
 			var c = $("dTitle");
 			var b = ArCard[a].PName.prototype;
 			c.innerHTML = b.CName + "<br>" + b.Tooltip;
-			SetStyle(c, { top: 60 * a + "px", left: "100px" });
+			const rect = EDAll.getBoundingClientRect();
+			EDAlloffsetLeft = rect.left;
+			EDAlloffsetTop = rect.top;
+			SetStyle(c, { top: EDAlloffsetTop + 60 * a + "px", left: EDAlloffsetLeft + 100 + "px" });
 		},
 	}
 );
