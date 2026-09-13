@@ -8,7 +8,7 @@ export var oPeashooter = InheritO(CPlants, {
 	BKind: 0,
 	AudioArr: ["splat1", "splat2", "splat3", "plastichit", "shieldhit", "shieldhit2"],
 	PicArr: [
-		"images/Card/Plants/Peashooter.png",
+		"images/Card/Plants/Peashooter.webp",
 		"images/Plants/Peashooter/0.gif",
 		"images/Plants/Peashooter/Peashooter.gif",
 		"images/Plants/PB00.gif",

@@ -8,7 +8,7 @@ export var oBalloon = InheritO(CPlants, {
 	coolTime: "Wave",
 	HP: 1,
 	AlmanacGif: 1,
-	PicArr: ["images/Card/Plants/BalloonGoober.png", "images/Zombies/Balloon/0.png", "images/Zombies/Balloon/popped.png"],
+	PicArr: ["images/Card/Plants/BalloonGoober.webp", "images/Zombies/Balloon/0.png", "images/Zombies/Balloon/popped.png"],
 	Tooltip: "Drops sun when popped",
 	Produce:
 		'<font color="#28325A">Balloonatics have a chance to spawn every wave. Popping them produces 150 sun</font>.</font><br><p>Toughness: <font color="CC241D">low</font></p> ">:3" says the Balloonatic. ">:3" says the Balloonatic, again.',

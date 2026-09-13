@@ -10,7 +10,7 @@ export var oSeedPuffShroom = InheritO(oFumeShroom, {
 	SunNum: 0,
 	Stature: -1,
 	PicArr: [
-		"images/Card/Plants/PuffShroom.png",
+		"images/Card/Plants/PuffShroom.webp",
 		"images/Plants/PuffShroom/0.gif",
 		"images/Plants/PuffShroom/PuffShroom.gif",
 		"images/Plants/PuffShroom/PuffShroomSleep.gif",

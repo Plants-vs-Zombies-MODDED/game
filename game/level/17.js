@@ -57,7 +57,7 @@ oS.Init(
 		},
 		FlagToMonitor: { 9: [ShowLargeWave, 0], 19: [ShowFinalWave, 0] },
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/IceShroom.png", "left:587px;top:270px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/IceShroom.webp", "left:587px;top:270px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oIceShroom, 18);
 				},

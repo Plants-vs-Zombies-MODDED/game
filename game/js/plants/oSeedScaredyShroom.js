@@ -11,7 +11,7 @@ export var oSeedScaredyShroom = InheritO(oFumeShroom, {
 	ArZ: [],
 	Attacking: 0,
 	PicArr: [
-		"images/Card/Plants/ScaredyShroom.png",
+		"images/Card/Plants/ScaredyShroom.webp",
 		"images/Plants/ScaredyShroom/0.gif",
 		"images/Plants/ScaredyShroom/ScaredyShroom.gif",
 		"images/Plants/ScaredyShroom/ScaredyShroomSleep.gif",

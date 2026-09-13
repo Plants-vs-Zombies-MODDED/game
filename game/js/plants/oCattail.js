@@ -35,7 +35,7 @@ export var oCattail = InheritO(oPeashooter, {
 	PicArr: (function () {
 		var a = "images/Plants/Cattail/";
 		return [
-			"images/Card/Plants/Catttail.png",
+			"images/Card/Plants/Cattail.webp",
 			a + "0.gif",
 			a + "cat.gif",
 			"images/Plants/Cactus/Projectile" + ($User.Browser.IE6 ? 8 : 32) + ".png",

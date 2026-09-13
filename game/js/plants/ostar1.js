@@ -13,7 +13,7 @@ export var ostar1 = InheritO(oNutBowling, {
 	canEat: 0,
 	BookHandBack: "Undersea",
 	Stature: 1,
-	PicArr: ["images/Card/Plants/star.png", "images/Plants/star/0.gif", "images/Plants/star/starRoll.gif"],
+	PicArr: ["images/Card/Plants/star.webp", "images/Plants/star/0.gif", "images/Plants/star/starRoll.gif"],
 	Tooltip: "",
 	Produce: "",
 	PrivateBirth(a) {

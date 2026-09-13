@@ -9,7 +9,7 @@ export var oGatlingPea = InheritO(oPeashooter, {
 	SunNum: 250,
 	BookHandPosition: "51% 57%",
 	PicArr: [
-		"images/Card/Plants/GatlingPea.png",
+		"images/Card/Plants/GatlingPea.webp",
 		"images/Plants/GatlingPea/0.gif",
 		"images/Plants/GatlingPea/GatlingPea.gif",
 		"images/Plants/PB00.gif",

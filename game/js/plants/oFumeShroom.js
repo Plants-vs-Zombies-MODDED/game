@@ -10,7 +10,7 @@ export var oFumeShroom = InheritO(CPlants, {
 	night: true,
 	BookHandPosition: "53% 60%",
 	PicArr: [
-		"images/Card/Plants/FumeShroom.png",
+		"images/Card/Plants/FumeShroom.webp",
 		"images/Plants/FumeShroom/0.gif",
 		"images/Plants/FumeShroom/FumeShroom.gif",
 		"images/Plants/FumeShroom/FumeShroomSleep.gif",

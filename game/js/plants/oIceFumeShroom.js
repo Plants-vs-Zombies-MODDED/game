@@ -5,7 +5,7 @@ export var oIceFumeShroom = InheritO(oFumeShroom, {
 	CName: "Icy Fume-shroom",
 	SunNum: 200,
 	PicArr: [
-		"images/Card/Plants/IcyFumeShroom.png",
+		"images/Card/Plants/IcyFumeShroom.webp",
 		"images/Plants/IcyFumeShroom/0.gif",
 		"images/Plants/IcyFumeShroom/FumeShroom.gif",
 		"images/Plants/IcyFumeShroom/FumeShroomSleep.gif",

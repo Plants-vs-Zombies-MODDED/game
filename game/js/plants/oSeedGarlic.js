@@ -7,7 +7,7 @@ export var oSeedGarlic = InheritO(CPlants, {
 	SunNum: 0,
 	HP: 400,
 	PicArr: [
-		"images/Card/Plants/Garlic.png",
+		"images/Card/Plants/Garlic.webp",
 		"images/Plants/Garlic/0.gif",
 		"images/Plants/Garlic/Garlic.gif",
 		"images/Plants/Garlic/Garlic_body2.gif",

@@ -14,7 +14,7 @@ export const oSeedSeaShroom = InheritO(oPuffShroom, {
 		return "display:none";
 	},
 	PicArr: [
-		"images/Card/Plants/SeaShroom.png",
+		"images/Card/Plants/SeaShroom.webp",
 		"images/Plants/SeaShroom/0.gif",
 		"images/Plants/SeaShroom/SeaShroom.gif",
 		"images/Plants/SeaShroom/SeaShroomSleep.gif",

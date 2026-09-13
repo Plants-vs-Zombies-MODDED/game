@@ -10,7 +10,7 @@ export var oOxygen = InheritO(CPlants, {
 	HP: 300,
 	BookHandBack: "Undersea",
 	coolTime: 7.5,
-	PicArr: ["images/Card/Plants/Oxygen.png", "images/Plants/Oxygen/0.gif", "images/Plants/Oxygen/Oxygen.gif"],
+	PicArr: ["images/Card/Plants/Oxygen.webp", "images/Plants/Oxygen/0.gif", "images/Plants/Oxygen/Oxygen.gif"],
 	Tooltip: "Oxygen provides algae to plants on the ground",
 	Produce:
 		'<font color="#28325A">Oxygen Algae can provide oxygen bubbles to plants on land</font><p>Range: <font color="#CC241D">all tiles in a medium area</font><br></p>"Puff...puff..." puffs Oxygen Algae, it wasn\'t that he was willing to keep spitting bubbles, only to blame him for drinking too much soda last night. However, there are rumors that all he knows is spitting bubbles.',

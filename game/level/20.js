@@ -93,7 +93,7 @@ oS.Init(
 		},
 		FlagToMonitor: { 9: [ShowLargeWave, 0], 19: [ShowFinalWave, 0] },
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/LilyPad.png", "left:667px;top:330px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/LilyPad.webp", "left:667px;top:330px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oLilyPad, 21);
 				},

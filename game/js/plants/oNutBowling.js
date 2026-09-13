@@ -10,7 +10,7 @@ export var oNutBowling = InheritO(CPlants, {
 	coolTime: 0,
 	canEat: 0,
 	Tooltip: "",
-	PicArr: ["images/Card/Plants/WallNut.png", "images/Plants/WallNut/0.webp", "images/Plants/WallNut/WallNut.webp"],
+	PicArr: ["images/Card/Plants/WallNut.webp", "images/Plants/WallNut/0.webp", "images/Plants/WallNut/WallNut.webp"],
 	AudioArr: ["bowling", "bowlingimpact", "bowlingimpact2"],
 	Produce: "",
 	CanAttack: 1,

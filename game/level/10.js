@@ -81,7 +81,7 @@ oS.Init(
 		},
 		FlagToMonitor: { 9: [ShowLargeWave, 0], 19: [ShowFinalWave, 0] },
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/PuffShroom.png", "left:667px;top:330px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/PuffShroom.webp", "left:667px;top:330px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oPuffShroom, 11);
 				},

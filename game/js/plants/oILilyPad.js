@@ -9,7 +9,7 @@ export var oILilyPad = InheritO(oFlowerPot, {
 	height: 58,
 	beAttackedPointR: 59,
 	HP: 1e3,
-	PicArr: ["images/Card/Plants/LilyPad.png", "images/Plants/LilyPad/0.gif", "images/Plants/LilyPad/LilyPad.gif"],
+	PicArr: ["images/Card/Plants/LilyPad.webp", "images/Plants/LilyPad/0.gif", "images/Plants/LilyPad/LilyPad.gif"],
 	getShadow(a) {
 		return "left:-8px;top:25px";
 	},

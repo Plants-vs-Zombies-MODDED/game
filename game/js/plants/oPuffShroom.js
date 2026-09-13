@@ -11,7 +11,7 @@ export var oPuffShroom = InheritO(oFumeShroom, {
 	Stature: -1,
 	BookHandPosition: "49% 60%",
 	PicArr: [
-		"images/Card/Plants/PuffShroom.png",
+		"images/Card/Plants/PuffShroom.webp",
 		"images/Plants/PuffShroom/0.gif",
 		"images/Plants/PuffShroom/PuffShroom.gif",
 		"images/Plants/PuffShroom/PuffShroomSleep.gif",

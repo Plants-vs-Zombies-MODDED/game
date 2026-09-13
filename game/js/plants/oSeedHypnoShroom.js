@@ -11,7 +11,7 @@ export var oSeedHypnoShroom = InheritO(oFumeShroom, {
 	coolTime: 30,
 	HP: 0,
 	PicArr: [
-		"images/Card/Plants/HypnoShroom.png",
+		"images/Card/Plants/HypnoShroom.webp",
 		"images/Plants/HypnoShroom/0.gif",
 		"images/Plants/HypnoShroom/HypnoShroom.gif",
 		"images/Plants/HypnoShroom/HypnoShroomSleep.gif",

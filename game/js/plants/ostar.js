@@ -14,7 +14,7 @@ export var ostar = InheritO(CPlants, {
 		'<font color="#28325A">Sea Starfruits roll and ricochet on any obstacles in their way.</font><p>Damage: <font color="#CC241D">medium</font><br>Range: <font color="#CC241D">all zombies that it hits</font><br>Special: <font color="#CC241D">ricochets when it hits an obstacle</font></p>Sea Starfruit always has a charming smile. No one knows the secret of him not feeling dizzy despite always spinning in circles. Some say the reason being him looking at one fixed point cross-eyed.',
 	AlmanacGif: 1,
 	BookHandPosition: "50% 85%",
-	PicArr: ["images/Card/Plants/star.png", "images/Plants/star/0.gif", "images/Plants/star/starRoll.gif"],
+	PicArr: ["images/Card/Plants/star.webp", "images/Plants/star/0.gif", "images/Plants/star/starRoll.gif"],
 	AudioArr: ["bowling", "bowlingimpact", "bowlingimpact2"],
 	CanAttack: 1,
 	InitTrigger() {},

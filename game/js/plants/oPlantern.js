@@ -11,7 +11,7 @@ export var oPlantern = InheritO(CPlants, {
 	BookHandBack: "Night",
 	SunNum: 25,
 	BookHandPosition: "50% 20%",
-	PicArr: ["images/Card/Plants/Plantern.png", "images/Plants/Plantern/0.gif", "images/Plants/Plantern/Plantern.gif"],
+	PicArr: ["images/Card/Plants/Plantern.webp", "images/Plants/Plantern/0.gif", "images/Plants/Plantern/Plantern.gif"],
 	Tooltip: "Lights up an area, letting you see through fog",
 	Produce:
 		"<font color=\"#28325A\">Planterns light up an area, letting you see through fog.</font><p>Range: <font color=\"#CC241D\">one lane</font><br>Special: <font color=\"#CC241D\">lets you see through fog</font><p>Plantern defies science. He just does. Other plants eat light and excrete oxygen; Plantern eats darkness and excretes light. Plantern's cagey about how he does it. \"I'm not gonna say 'sorcery,' I wouldn't use the term 'dark forces,' I just... I think I've said enough.\"",

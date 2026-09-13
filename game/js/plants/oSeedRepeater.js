@@ -8,7 +8,7 @@ export var oSeedRepeater = InheritO(oPeashooter, {
 	beAttackedPointR: 53,
 	SunNum: 0,
 	PicArr: [
-		"images/Card/Plants/Repeater.png",
+		"images/Card/Plants/Repeater.webp",
 		"images/Plants/Repeater/0.gif",
 		"images/Plants/Repeater/Repeater.gif",
 		"images/Plants/PB00.gif",

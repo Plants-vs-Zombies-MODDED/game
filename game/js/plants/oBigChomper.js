@@ -6,7 +6,7 @@ export var oBigChomper = InheritO(oChomper, {
 	coolTime: 15,
 	BookHandPosition: "56% 54%",
 	PicArr: [
-		"images/Card/Plants/BigChomper.png",
+		"images/Card/Plants/BigChomper.webp",
 		"images/Plants/BigChomper/0.gif",
 		"images/Plants/BigChomper/Chomper.gif",
 		"images/Plants/BigChomper/ChomperAttack.gif",

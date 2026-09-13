@@ -15,7 +15,7 @@ export var oMagnetShroom = InheritO(CPlants, {
 	Produce:
 		'磁力菇可以用磁力吸取僵尸的头盔等其它金属物品。<p>范围：<font color="#CC241D">靠近的僵尸</font><br>特点：<font color="#CC241D">移除僵尸们所有的金属物品<br>白天睡觉</font></p>磁力是一种强大的力量，非常强大，强大到有时都吓到磁力菇自己了。能力越大，责任越大，他不知道自己能否肩负得起这责任。',
 	InitTrigger() {},
-	PicArr: ["images/Card/Plants/MagnetShroom.png", "images/Plants/Ms/Ms.gif", "images/Plants/Ms/Ms.gif", "images/Plants/Ms/sleep.gif"],
+	PicArr: ["images/Card/Plants/MagnetShroom.webp", "images/Plants/Ms/Ms.gif", "images/Plants/Ms/Ms.gif", "images/Plants/Ms/sleep.gif"],
 	getTriggerRange: (R, LX, RX) => [[0, oS.W, 0]],
 	AudioArr: ["blover"],
 	BirthStyle(c, d, b, a) {

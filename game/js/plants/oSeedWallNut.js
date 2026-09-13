@@ -8,7 +8,7 @@ export var oSeedWallNut = InheritO(CPlants, {
 	coolTime: 15.5,
 	HP: 4e3,
 	PicArr: [
-		"images/Card/Plants/WallNut.png",
+		"images/Card/Plants/WallNut.webp",
 		"images/Plants/WallNut/0.webp",
 		"images/Plants/WallNut/WallNut.webp",
 		"images/Plants/WallNut/Wallnut_cracked1.webp",

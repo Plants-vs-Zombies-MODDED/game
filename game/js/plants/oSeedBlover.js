@@ -5,7 +5,7 @@ export var oSeedBlover = InheritO(CPlants, {
 	beAttackedPointR: 98,
 	height: 110,
 	SunNum: 0,
-	PicArr: ["images/Card/Plants/Blover.png", "images/Plants/Blover/0.gif", "images/Plants/Blover/Blover.gif"],
+	PicArr: ["images/Card/Plants/Blover.webp", "images/Plants/Blover/0.gif", "images/Plants/Blover/Blover.gif"],
 	Tooltip: "Blows away all balloon zombies and fog",
 	Produce:
 		'三叶草，能吹走所有的气球僵尸，也可以把雾吹散。<p>使用方法：<font color="#CC241D">单独使用，立即生效</font><br>特点：<font color="#CC241D">吹走屏幕上所有的气球僵尸</font></p>当三叶草五岁生日的时候，他得到了一个闪亮的生日蛋糕。他许好愿，然后深吸一口气却只吹灭了60%的蜡烛。然而他没有放弃，小时候的那次失败促使他更加努力直到现在。',

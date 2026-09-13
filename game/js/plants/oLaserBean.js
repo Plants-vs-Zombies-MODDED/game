@@ -10,7 +10,7 @@ export var oLaserBean = InheritO(CPlants, {
 	HP: 4e3,
 	BookHandPosition: "-18.5% 65%",
 	PicArr: [
-		"images/Card/Plants/LaserBean.png",
+		"images/Card/Plants/LaserBean.webp",
 		"images/Plants/LaserPea/0.gif",
 		"images/Plants/LaserPea/LaserPea.gif",
 		"images/Plants/LaserPea/LaserPeaSleep.gif",

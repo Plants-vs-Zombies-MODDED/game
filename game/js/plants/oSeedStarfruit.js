@@ -8,7 +8,7 @@ export var oSeedStarfruit = InheritO(CPlants, {
 	GetDY(b, c, a) {
 		return a[0] ? -17 : -10;
 	},
-	PicArr: ["images/Card/Plants/Starfruit.png", "images/Plants/Starfruit/0.gif", "images/Plants/Starfruit/Starfruit.gif", "images/Plants/Starfruit/Star.gif"],
+	PicArr: ["images/Card/Plants/Starfruit.webp", "images/Plants/Starfruit/0.gif", "images/Plants/Starfruit/Starfruit.gif", "images/Plants/Starfruit/Star.gif"],
 	Tooltip: "Shoots stars in 5 directions",
 	Produce:
 		'Starfruit can fire small starfruits in five directions.<p>Harm:<font color="#CC241D">medium</font><br>Scope:<font color="#CC241D">five directions</font></p>Starfruit: "Hey man, I went to the dentist one day and he said</font><br>I have four cavities. When I count, I only have one tooth! one</font><br>Carambola: "Hey man, theres a tooth with four cavities? Why is that?" I went to the dentist and he said',

@@ -15,7 +15,7 @@ export var oSeaShroom = InheritO(oPuffShroom, {
 	},
 	BookHandPosition: "49% 90%",
 	PicArr: [
-		"images/Card/Plants/SeaShroom.png",
+		"images/Card/Plants/SeaShroom.webp",
 		"images/Plants/SeaShroom/0.gif",
 		"images/Plants/SeaShroom/SeaShroom.gif",
 		"images/Plants/SeaShroom/SeaShroomSleep.gif",

@@ -12,7 +12,7 @@ export var oHypnoShroom = InheritO(oFumeShroom, {
 	HP: 0,
 	BookHandPosition: "48% 61%",
 	PicArr: [
-		"images/Card/Plants/HypnoShroom.png",
+		"images/Card/Plants/HypnoShroom.webp",
 		"images/Plants/HypnoShroom/0.gif",
 		"images/Plants/HypnoShroom/HypnoShroom.gif",
 		"images/Plants/HypnoShroom/HypnoShroomSleep.gif",

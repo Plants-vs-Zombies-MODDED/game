@@ -6,7 +6,7 @@ export var oSeedTorchwood = InheritO(CPlants, {
 	beAttackedPointR: 53,
 	SunNum: 0,
 	PicArr: [
-		"images/Card/Plants/Torchwood.png",
+		"images/Card/Plants/Torchwood.webp",
 		"images/Plants/Torchwood/0.gif",
 		"images/Plants/Torchwood/Torchwood.gif",
 		"images/Plants/PB00.png",

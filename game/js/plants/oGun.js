@@ -12,7 +12,7 @@ export var oGun = InheritO(oPuffShroom, {
 	SunNum: 25,
 	BookHandPosition: "49% 72%",
 	PicArr: [
-		"images/Card/Plants/gun.png",
+		"images/Card/Plants/gun.webp",
 		"images/Plants/gun/0.gif",
 		"images/Plants/gun/SeaShroom.gif",
 		"images/Plants/gun/SeaShroomSleep.gif",

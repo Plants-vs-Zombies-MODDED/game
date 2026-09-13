@@ -21,7 +21,7 @@ export var oPotatoMine = InheritO(CPlants, {
 	},
 	BookHandPosition: "50% 70%",
 	PicArr: [
-		"images/Card/Plants/PotatoMine.png",
+		"images/Card/Plants/PotatoMine.webp",
 		"images/Plants/PotatoMine/0.gif",
 		"images/Plants/PotatoMine/PotatoMine.gif",
 		"images/Plants/PotatoMine/PotatoMineNotReady.gif",

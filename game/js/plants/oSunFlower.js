@@ -6,7 +6,7 @@ export var oSunFlower = InheritO(CPlants, {
 	beAttackedPointR: 53,
 	SunNum: 50,
 	PicArr: [
-		"images/Card/Plants/SunFlower.png",
+		"images/Card/Plants/SunFlower.webp",
 		"images/Plants/SunFlower/0.gif",
 		"images/Plants/SunFlower/SunFlower1.gif",
 		"images/Plants/SunFlower/SunFlower.gif",

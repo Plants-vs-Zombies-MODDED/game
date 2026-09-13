@@ -93,7 +93,7 @@ oS.Init(
 		},
 		FlagToMonitor: {},
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/LotusRoot.png", "left:827px;top:525px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/LotusRoot.webp", "left:827px;top:525px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oLotusRoot, 46);
 				},

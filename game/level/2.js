@@ -165,7 +165,7 @@ oS.Init(
 		FlagToSumNum: { a1: [3, 4], a2: [1, 2, 3] },
 		FlagToMonitor: { 5: [ShowFinalWave, 0] },
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/CherryBomb.png", "left:827px;top:220px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/CherryBomb.webp", "left:827px;top:220px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oCherryBomb, 3);
 				},

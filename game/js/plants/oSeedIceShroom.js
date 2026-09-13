@@ -9,7 +9,7 @@ export var oSeedIceShroom = InheritO(oSeedFumeShroom, {
 	SunNum: 0,
 	coolTime: 50,
 	PicArr: [
-		"images/Card/Plants/IceShroom.png",
+		"images/Card/Plants/IceShroom.webp",
 		"images/Plants/IceShroom/0.gif",
 		"images/Plants/IceShroom/IceShroom.gif",
 		"images/Plants/IceShroom/IceShroomSleep.gif",

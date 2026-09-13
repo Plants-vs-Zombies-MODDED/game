@@ -11,7 +11,7 @@ export const oCactus = InheritO(CPlants, {
 	AudioArr: ["plantgrow"],
 	PicArr: (function () {
 		return [
-			"images/Card/Plants/Cactus.png",
+			"images/Card/Plants/Cactus.webp",
 			"images/Plants/Cactus/0.gif",
 			"images/Plants/Cactus/Cactus.gif",
 			"images/Plants/Cactus/Cactus2.gif",

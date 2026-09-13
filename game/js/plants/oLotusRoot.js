@@ -14,7 +14,7 @@ export var oLotusRoot = InheritO(oPeashooter, {
 	},
 	BookHandPosition: "58% 75%",
 	PicArr: [
-		"images/Card/Plants/LotusRoot.png",
+		"images/Card/Plants/LotusRoot.webp",
 		"images/Plants/LotusRoot/0.gif",
 		"images/Plants/LotusRoot/Peashooter.gif",
 		"images/Plants/LotusRoot/Missile.png",
