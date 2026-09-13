@@ -173,7 +173,38 @@ td.HandBookZombie {
 	overflow: hidden;
 	left: calc(50vw - 450px);
 	position: absolute;
+	/* animation: skew 30s cubic-bezier(0.075, 0.82, 0.165, 1) infinite alternate; */
 }
+
+/* the funny */
+body {
+    animation: skew 30s cubic-bezier(0.075, 0.82, 0.165, 1) infinite alternate;
+}
+
+/*
+@keyframes skew {
+    0% {
+        transform: rotate(0deg) skewX(0deg) skewY(0deg) translateX(-50%) translateY(0%);
+        filter: hue-rotate(40deg) brightness(400%);
+    }
+    25% {
+        transform: rotate(90deg) skewX(230deg) skewY(-10deg) translateX(0%) translateY(402%);
+        filter: hue-rotate(79deg) brightness(40%);
+    }
+    50% {
+        transform: rotate(180deg) skewX(-30deg) skewY(45deg) translateX(50%) translateY(0%);
+        filter: hue-rotate(140deg) brightness(100%);
+    }
+    75% {
+        transform: rotate(270deg) skewX(20deg) skewY(403deg) translateX(-50%) translateY(52%);
+        filter: hue-rotate(120deg) brightness(100%);
+    }
+    100% {
+        transform: rotate(360deg) skewX(340deg) skewY(5492deg) translateX(50%) translateY(-40%);
+        filter: hue-rotate(40deg) brightness(400%);
+    }
+}
+*/
 
 #dLvlLink {
 	position: absolute;
@@ -1040,6 +1071,7 @@ td.HandBookZombie {
 
 #btnViewPlant {
 	cursor: url(images/interface/Pointer.cur), pointer;
+	margin-right: -24px;
 	width: 113;
 	height: 41;
 	border-left: 3px solid #85411c;
@@ -1063,6 +1095,7 @@ td.HandBookZombie {
 	font-size: 14pt;
 	font-family: Tahoma;
 	margin-top: 25px;
+	margin-left: -14px;
 	border-left: 3px solid #6c6c85;
 	border-right: 3px solid #595674;
 	border-top: 3px solid #6c6c85;
