@@ -414,12 +414,12 @@ var oS = {
 	},
 	LoadAudio: $User.HTML5
 		? function () {
-			let i = oS.AudioArr.length;
-			while (i--) {
-				NewAudio({ source: oS.AudioArr[i] });
+				let i = oS.AudioArr.length;
+				while (i--) {
+					NewAudio({ source: oS.AudioArr[i] });
+				}
 			}
-		}
-		: function () { },
+		: function () {},
 	InitPn(arr) {
 		const ele = ($Pn[arr[0]] = NewEle(0, "div", "position:absolute"));
 		NewImg(0, ShadowPNG, arr[2], ele);
@@ -428,63 +428,63 @@ var oS = {
 	},
 	LoadImage: $User.Browser.IE
 		? function (src, callback, args) {
-			const img = new Image();
-			img.onreadystatechange = function () {
-				if (img.readyState === "complete") {
-					callback(args, 1);
-				}
-			};
-			img.onerror = function () {
-				img.onreadystatechange = null;
-				img.title = src;
-				callback(args, 0);
-			};
-			img.src = src;
-		}
-		: function (src, callback, args) {
-			const img = new Image();
-			img.src = src;
-			if (img.complete) {
-				callback(args, 1);
-			} else {
-				img.onload = function () {
-					if (img.complete) {
+				const img = new Image();
+				img.onreadystatechange = function () {
+					if (img.readyState === "complete") {
 						callback(args, 1);
 					}
 				};
 				img.onerror = function () {
+					img.onreadystatechange = null;
 					img.title = src;
 					callback(args, 0);
 				};
+				img.src = src;
 			}
-		},
+		: function (src, callback, args) {
+				const img = new Image();
+				img.src = src;
+				if (img.complete) {
+					callback(args, 1);
+				} else {
+					img.onload = function () {
+						if (img.complete) {
+							callback(args, 1);
+						}
+					};
+					img.onerror = function () {
+						img.title = src;
+						callback(args, 0);
+					};
+				}
+			},
 	LoadScript: $User.Browser.IE
 		? function (id, src, callback, parent, args) {
-			const script = NewEle(id, "script", 0, { type: "text/javascript" });
-			script.onreadystatechange = function () {
-				if (script.readyState === "loaded" || script.readyState === "complete") {
+				const script = NewEle(id, "script", 0, { type: "text/javascript" });
+				script.onreadystatechange = function () {
+					if (script.readyState === "loaded" || script.readyState === "complete") {
+						script.onreadystatechange = null;
+						callback(args, 1);
+					}
+				};
+				script.onerror = function () {
 					script.onreadystatechange = null;
-					callback(args, 1);
-				}
-			};
-			script.onerror = function () {
-				script.onreadystatechange = null;
-				callback(args, 0);
-			};
-			script.src = src;
-			parent.appendChild(script);
-		}
+					callback(args, 0);
+				};
+				script.src = src;
+				parent.appendChild(script);
+			}
 		: function (id, src, callback, parent, args) {
-			const script = NewEle(id, "script", 0, { type: "text/javascript" });
-			script.onload = function () {
-				callback(args, 1);
-			};
-			script.onerror = function () {
-				callback(args, 0);
-			};
-			script.src = src;
-			parent.appendChild(script);
-		},
+				const script = NewEle(id, "script", 0, { type: "text/javascript" });
+				script.onload = function () {
+					callback(args, 1);
+				};
+				script.onerror = function () {
+					callback(args, 0);
+				};
+				script.src = src;
+				parent.appendChild(script);
+			},
 	CheckImg(b, a) {
 		const self = oS;
 		if (self.AccessNum > self.PicNum || !self.MustAllReady) {
@@ -913,7 +913,7 @@ var oP = {
 				}
 			};
 		} else {
-			self.MonPrgs = function () { };
+			self.MonPrgs = function () {};
 		}
 
 		if (!config || !config.FlagToEnd) {
@@ -944,9 +944,9 @@ var oP = {
 		for (let flagIdx in largeFlags) {
 			Math.floor(flagIdx) < totalFlags
 				? SetStyle(largeFlags[flagIdx], {
-					visibility: "visible",
-					left: 150 - (flagIdx - 1) * step + "px",
-				})
+						visibility: "visible",
+						left: 150 - (flagIdx - 1) * step + "px",
+					})
 				: SetVisible(largeFlags[flagIdx]);
 		}
 
@@ -1047,7 +1047,7 @@ var oP = {
 
 		while (remainingLvl > 0) {
 			if (maxIdx && maxLvl > remainingLvl) {
-				while (--maxIdx && zombiePool[maxIdx].prototype.Lvl > remainingLvl) { }
+				while (--maxIdx && zombiePool[maxIdx].prototype.Lvl > remainingLvl) {}
 				poolLen = maxIdx + 1;
 				maxLvl = zombiePool[maxIdx].prototype.Lvl;
 			}
@@ -1799,7 +1799,7 @@ var KeyBoardGrowPlant = function (e, mode) {
 	}
 };
 
-var GroundOnmousemove = function () { };
+var GroundOnmousemove = function () {};
 
 var GroundOnmousemove1 = function (e) {
 	e = window.event || e;
@@ -2461,7 +2461,7 @@ var CancelPlant = function () {
 	ClearChild($("MovePlant"), $("MovePlantAlpha"));
 	oS.Chose = 0;
 	MonitorCard();
-	GroundOnmousemove = function () { };
+	GroundOnmousemove = function () {};
 };
 
 var ShovelPlant = function (data) {
@@ -2497,7 +2497,7 @@ var CancelShovel = function (e) {
 	if (prevId) {
 		SetAlpha($(prevId).childNodes[1], 100, 1);
 	}
-	GroundOnmousemove = function () { };
+	GroundOnmousemove = function () {};
 };
 
 var StopBubble = function (e) {
@@ -3245,7 +3245,7 @@ var ClickMenu = function (e, btn) {
 		ShowOptions();
 	}
 	$("sOptionsMenu").textContent = "Back To Game";
-  $("pauseHome").innerHTML = 'Home <img src="images/interface/icon_house.png" alt="🏠" id="pauseHomeIcon" class="settingsButtonIcon" />';
+	$("pauseHome").innerHTML = 'Home <img src="images/interface/icon_house.png" alt="🏠" id="pauseHomeIcon" class="settingsButtonIcon" />';
 	$("pauseHome").onclick = function () {
 		let oldLv = oS.Lvl;
 		SelectModal(0);
@@ -3418,7 +3418,7 @@ var ClearChild = function () {
 			let child = arguments[i];
 			child.parentNode.removeChild(child);
 			child = null;
-		} catch (e) { }
+		} catch (e) {}
 	}
 };
 
@@ -3460,11 +3460,11 @@ var SetVisible = function () {
 
 var SetAlpha = $User.Browser.IE6
 	? function (ele, val, opacity) {
-		ele.style.filter = "alpha(opacity=" + val + ")";
-	}
+			ele.style.filter = "alpha(opacity=" + val + ")";
+		}
 	: function (ele, val, opacity) {
-		ele.style.opacity = opacity;
-	};
+			ele.style.opacity = opacity;
+		};
 
 var SetStyle = function (ele, styles) {
 	const s = ele.style;
@@ -3572,7 +3572,7 @@ var EditEle = function (ele, attrs, styles, props, parent) {
 };
 
 var NewO = function (proto, constructor) {
-	constructor = function () { };
+	constructor = function () {};
 	constructor.prototype = proto;
 	return constructor;
 };
@@ -3585,7 +3585,7 @@ var SetPrototype = function (child, parent) {
 };
 
 var InheritO = function (Parent, properties, arrayProps, child, parentArr, childArr) {
-	const Child = function () { };
+	const Child = function () {};
 	Child.prototype = new Parent();
 	if (properties) {
 		SetPrototype(Child, properties);
@@ -3667,7 +3667,7 @@ var ImgSpriter = function (id, cardId, config, frameIdx, callback) {
 	}
 };
 
-var Ajax = function () { };
+var Ajax = function () {};
 
 Date.prototype.format = function (fmt) {
 	const o = {
@@ -3692,25 +3692,25 @@ Date.prototype.format = function (fmt) {
 
 var NewMusic = $User.HTML5
 	? function (src) {
-		NewAudio({ autoplay: true, loop: true, source: src });
-	}
-	: function (src) {
-		if (!oS.Silence) {
-			$("oEmbed").innerHTML = "";
+			NewAudio({ autoplay: true, loop: true, source: src });
 		}
-	};
+	: function (src) {
+			if (!oS.Silence) {
+				$("oEmbed").innerHTML = "";
+			}
+		};
 
 var PauseMusic = $User.HTML5
 	? function () {
-		const audio = oAudio[oS.LoadMusic];
-		if (audio) {
-			audio.currentTime = 0;
-			audio.pause();
+			const audio = oAudio[oS.LoadMusic];
+			if (audio) {
+				audio.currentTime = 0;
+				audio.pause();
+			}
 		}
-	}
 	: function () {
-		$("oEmbed").innerHTML = "";
-	};
+			$("oEmbed").innerHTML = "";
+		};
 
 var StartAdventure = function (level) {
 	const handDiv = $("ZombieHand");
@@ -3776,140 +3776,140 @@ var PausedAudioArr = [];
 
 var NewAudio = $User.HTML5
 	? function (config) {
-		const src = config.source;
-		if (oAudio[src]) {
-			return;
+			const src = config.source;
+			if (oAudio[src]) {
+				return;
+			}
+
+			const audio = document.createElement("audio");
+			const types = { mp3: "audio/mpeg" };
+			const formats = ["mp3"];
+			let i = formats.length;
+
+			audio.autoplay = !!config.autoplay;
+
+			if (config.loop) {
+				audio.addEventListener(
+					"ended",
+					() => {
+						audio.play();
+					},
+					false
+				);
+			}
+
+			while (i--) {
+				let source = document.createElement("source");
+				source.type = types[formats[i]];
+				source.src = "audio/" + src + ".mp3";
+				audio.appendChild(source);
+			}
+
+			audio.preload = config.preload === undefined ? "auto" : ["auto", "meta", "none"][config.preload];
+			audio.muted = oS.Silence;
+
+			if (config.callback) {
+				audio.addEventListener("canplaythrough", config.callback, false);
+			}
+
+			return (oAudio[src] = audio);
 		}
-
-		const audio = document.createElement("audio");
-		const types = { mp3: "audio/mpeg" };
-		const formats = ["mp3"];
-		let i = formats.length;
-
-		audio.autoplay = !!config.autoplay;
-
-		if (config.loop) {
-			audio.addEventListener(
-				"ended",
-				() => {
-					audio.play();
-				},
-				false
-			);
-		}
-
-		while (i--) {
-			let source = document.createElement("source");
-			source.type = types[formats[i]];
-			source.src = "audio/" + src + ".mp3";
-			audio.appendChild(source);
-		}
-
-		audio.preload = config.preload === undefined ? "auto" : ["auto", "meta", "none"][config.preload];
-		audio.muted = oS.Silence;
-
-		if (config.callback) {
-			audio.addEventListener("canplaythrough", config.callback, false);
-		}
-
-		return (oAudio[src] = audio);
-	}
-	: function () { };
+	: function () {};
 
 var PlayMusic = $User.HTML5
 	? function (src) {
-		let audio = oAudio[src];
-		if (audio) {
-			try {
-				audio.currentTime = 0;
-			} catch (e) { }
-			audio.play();
-		} else {
-			NewMusic(src);
-			oAudio[src].play();
+			let audio = oAudio[src];
+			if (audio) {
+				try {
+					audio.currentTime = 0;
+				} catch (e) {}
+				audio.play();
+			} else {
+				NewMusic(src);
+				oAudio[src].play();
+			}
 		}
-	}
 	: function (src) {
-		NewMusic(src);
-	};
+			NewMusic(src);
+		};
 
 var PlayAudioLegacy = $User.HTML5
 	? function (src, loop) {
-		const audio = oAudio[src];
-		if (audio) {
-			audio.loop = !!loop;
-			audio.play();
-		} else {
-			NewAudio({ source: src, loop: !!loop }).play();
+			const audio = oAudio[src];
+			if (audio) {
+				audio.loop = !!loop;
+				audio.play();
+			} else {
+				NewAudio({ source: src, loop: !!loop }).play();
+			}
 		}
-	}
-	: function () { };
+	: function () {};
 
 var PlayAudio = $User.HTML5
 	? function (src, loop) {
-		let audio = oAudio[src];
-		if (!audio) {
-			audio = NewAudio({ source: src, loop: !!loop });
-			oAudio[src] = audio;
-		} else {
-			audio.loop = !!loop;
+			let audio = oAudio[src];
+			if (!audio) {
+				audio = NewAudio({ source: src, loop: !!loop });
+				oAudio[src] = audio;
+			} else {
+				audio.loop = !!loop;
+			}
+			audio.currentTime = 0;
+			audio.play();
 		}
-		audio.currentTime = 0;
-		audio.play();
-	}
-	: function () { };
+	: function () {};
 
 var PauseAudio = $User.HTML5
 	? function (src) {
-		oAudio[src].pause();
-	}
-	: function () { };
+			oAudio[src].pause();
+		}
+	: function () {};
 
 var StopMusic = $User.HTML5
 	? function () {
-		const audio = oAudio[oS.LoadMusic];
-		try {
-			audio.currentTime = 0;
-		} catch (e) { }
-		if (audio) {
-			audio.pause();
-		}
-	}
-	: function () { };
-
-var StopAudio = $User.HTML5
-	? function (src) {
-		const audio = oAudio[src];
-		try {
-			audio.currentTime = 0;
-		} catch (e) { }
-		try {
-			audio.pause();
-		} catch (e) { }
-	}
-	: function () { };
-
-var AllAudioPaused = $User.HTML5
-	? function () {
-		for (let key in oAudio) {
-			let audio = oAudio[key];
-			if (!(audio.paused || audio.ended)) {
-				PausedAudioArr.push(key);
+			const audio = oAudio[oS.LoadMusic];
+			try {
+				audio.currentTime = 0;
+			} catch (e) {}
+			if (audio) {
 				audio.pause();
 			}
 		}
-	}
-	: function () { };
+	: function () {};
+
+var StopAudio = $User.HTML5
+	? function (src) {
+			const audio = oAudio[src];
+			try {
+				audio.currentTime = 0;
+			} catch (e) {}
+			try {
+				audio.pause();
+			} catch (e) {}
+		}
+	: function () {};
+
+var AllAudioPaused = $User.HTML5
+	? function () {
+			for (let key in oAudio) {
+				let audio = oAudio[key];
+				if (!(audio.paused || audio.ended)) {
+					PausedAudioArr.push(key);
+					audio.pause();
+				}
+			}
+		}
+	: function () {};
 
 var AllAudioPauseCanceled = $User.HTML5
 	? function () {
-		let i = PausedAudioArr.length;
-		while (i--) {
-			oAudio[PausedAudioArr[i]].play();
+			let i = PausedAudioArr.length;
+			while (i--) {
+				oAudio[PausedAudioArr[i]].play();
+			}
+			PausedAudioArr.length = 0;
 		}
-		PausedAudioArr.length = 0;
-	}
-	: function () { };
+	: function () {};
 
 var AllAudioMuted = function () {
 	for (let key in oAudio) {
@@ -3933,19 +3933,19 @@ var AllAudioMuteCanceled = function () {
 
 var CheckSilence = $User.HTML5
 	? function (checkbox) {
-		const val = checkbox.checked ? 1 : 0;
-		if (val !== oS.Silence) {
-			addCookie("JSPVZSilence", (oS.Silence = val));
-			val ? AllAudioMuted() : AllAudioMuteCanceled();
+			const val = checkbox.checked ? 1 : 0;
+			if (val !== oS.Silence) {
+				addCookie("JSPVZSilence", (oS.Silence = val));
+				val ? AllAudioMuted() : AllAudioMuteCanceled();
+			}
 		}
-	}
 	: function (checkbox) {
-		const val = checkbox.checked ? 1 : 0;
-		if (val !== oS.Silence) {
-			addCookie("JSPVZSilence", (oS.Silence = val));
-			val ? PauseMusic() : NewMusic(oS.StartGameMusic);
-		}
-	};
+			const val = checkbox.checked ? 1 : 0;
+			if (val !== oS.Silence) {
+				addCookie("JSPVZSilence", (oS.Silence = val));
+				val ? PauseMusic() : NewMusic(oS.StartGameMusic);
+			}
+		};
 
 var AppearCard = function (x, y, PlantClass, moveType, duration) {
 	const id = "dCard" + Math.random();
@@ -4285,7 +4285,7 @@ var CPlants = NewO({
 			EDPZ
 		);
 	},
-	PrivateBirth(a) { },
+	PrivateBirth(a) {},
 	getTriggerRange(a, b, c) {
 		return [[b, oS.W, 0]];
 	},
@@ -4341,7 +4341,7 @@ var CPlants = NewO({
 	AttackCheck2(a) {
 		return a.Altitude > 0;
 	},
-	PrivateDie(a) { },
+	PrivateDie(a) {},
 	BoomDie() {
 		var a = this;
 		var b = a.id;
@@ -4443,7 +4443,7 @@ var easeInOutExpo = function (x) {
 	return x === 0
 		? 0
 		: // oxlint-disable-next-line no-nested-ternary
-		x === 1
+			x === 1
 			? 1
 			: x < 0.5
 				? Math.pow(2, 20 * x - 10) / 2
@@ -4498,7 +4498,7 @@ var easeInOutElastic = function (x) {
 	return x === 0
 		? 0
 		: // oxlint-disable-next-line no-nested-ternary
-		x === 1
+			x === 1
 			? 1
 			: x < 0.5
 				? -(Math.pow(2, 20 * x - 10) * Math.sin((20 * x - 11.125) * c5)) / 2
