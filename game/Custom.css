@@ -150,7 +150,7 @@
 	/* text-shadow: #2e293e -1px -2px, #2e293e -2px 0px, #37354b 1px -2px,
         #757692 2px 0px, #757692 1px 2px, #757692 2px 2px !important; */
 	font-size: x-large !important;
-	/* -webkit-text-stroke: 0.2px rgb(0 0 0 / 27%) !important; */
+	-webkit-text-stroke: 0.2px rgb(0 0 0 / 27%) !important;
 	margin-left: -10px !important;
 	margin-top: 4px;
 }
@@ -219,15 +219,16 @@
 	margin-top: -4px;
 }
 #btnViewPlant {
-	color: #d0932b !important;
+	color: #D19B36 !important;
 	text-shadow:
 		1px 1px 0px rgba(255, 255, 255, 0.1),
-		-1px -1.5px 0px rgba(0, 0, 0, 0.7) !important;
+		-1px -1.5px 0px rgba(0, 0, 0, 0.5),
+		1px 1.5px 0px rgba(0, 0, 0, 0.3) !important;
 
 	/* text-shadow: #2e293e -1px -2px, #2e293e -2px 0px, #37354b 1px -2px,
         #757692 2px 0px, #757692 1px 2px, #757692 2px 2px !important; */
 	font-size: x-large !important;
-	-webkit-text-stroke: 0.2px rgb(0 0 0 / 27%) !important;
+	-webkit-text-stroke: 0.1px rgb(0 0 0 / 10%) !important;
 }
 #dHandBookP > div.title,
 #dHandBook > div.title,
@@ -236,74 +237,54 @@
 #dChoseTitle,
 #iz-menu-title {
 	margin-top: -8px;
-	font-size: 28px;
-	/*	-webkit-text-stroke: 1px #ceaa31; */
+	font-size: 38px !important;
+	line-height: 2.5 !important;
 	font-weight: lighter;
 	text-shadow:
-		0px 3px 0px #000,
-		1px 3px 0px #000,
-		2px 3px 0px #000,
-		3px 3px 0px #000,
-		3px 2px 0px #000,
-		3px 1px 0px #000,
-		3px 0px 0px #000,
-		3px -1px 0px #000,
-		3px -2px 0px #000,
-		3px -3px 0px #000,
-		2px -1px 0px #000,
-		2px -2px 0px #000,
-		2px -3px 0px #000,
-		1px -1px 0px #000,
-		1px -2px 0px #000,
-		1px -3px 0px #000,
-		0px -1px 0px #000,
-		0px -2px 0px #000,
-		0px -3px 0px #000,
-		-1px -1px 0px #000,
-		-1px -2px 0px #000,
-		-1px -3px 0px #000,
-		-2px -1px 0px #000,
-		-2px -2px 0px #000,
-		-2px -3px 0px #000,
-		-3px -1px 0px #000,
-		-3px -2px 0px #000,
-		-3px -3px 0px #000,
-		-3px 0px 0px #000,
-		-3px 1px 0px #000,
-		-3px 2px 0px #000,
-		-3px 3px 0px #000,
-		2px 5px 0px #000,
-		3px 5px 0px #000,
-		4px 5px 0px #000,
-		5px 5px 0px #000,
-		5px 4px 0px #000,
-		5px 3px 0px #000,
-		5px 2px 0px #000,
-		5px 1px 0px #000,
-		5px 0px 0px #000,
-		5px -1px 0px #000,
-		4px 1px 0px #000,
-		4px 0px 0px #000,
-		4px -1px 0px #000,
-		3px 1px 0px #000,
-		3px 0px 0px #000,
-		3px -1px 0px #000,
-		2px 1px 0px #000,
-		2px 0px 0px #000,
-		2px -1px 0px #000,
-		1px 1px 0px #000,
-		1px 0px 0px #000,
-		1px -1px 0px #000,
-		0px 1px 0px #000,
-		0px 0px 0px #000,
-		0px -1px 0px #000,
-		-1px 1px 0px #000,
-		-1px -0px 0px #000,
-		-1px -1px 0px #000,
-		-1px 2px 0px #000,
-		-1px 3px 0px #000,
-		-1px 4px 0px #000,
-		-1px 5px 0px #000;
+			/* */
+			-1px -1px 0px #000,
+			 0px -1px 0px #000,
+			 1px -1px 0px #000,
+			-1px  0px 0px #000,
+			-1px  1px 0px #000,
+			-2px -1px 0px #000,
+			-1px -2px 0px #000,
+			-2px -2px 0px #000,
+
+			/* */
+			 1px  0px 0px #000,
+			 0px  1px 0px #000,
+			 1px  1px 0px #000,
+			 2px  0px 0px #000,
+			 2px  1px 0px #000,
+			 2px  2px 0px #000,
+			 1px  2px 0px #000,
+			 0px  2px 0px #000,
+
+			/* */
+			 3px  0px 0px #000,
+			 3px  1px 0px #000,
+			 3px  2px 0px #000,
+			 3px  3px 0px #000,
+			 2px  3px 0px #000,
+			 1px  3px 0px #000,
+			 0px  3px 0px #000,
+
+			/* */
+			 4px  0px 0px #000,
+			 4px  1px 0px #000,
+			 4px  2px 0px #000,
+			 4px  3px 0px #000,
+			 4px  4px 0px #000,
+			 3px  4px 0px #000,
+			 2px  4px 0px #000,
+			 1px  4px 0px #000,
+			 0px  4px 0px #000,
+
+			/* */
+			 5px  5px 0px #000,
+			 5px  4px 0px #000,
+			 4px  5px 0px #000;
 }
 #dHandBook > div.title,
 #dMiniSmallTitle,
