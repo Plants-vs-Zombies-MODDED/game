@@ -1107,6 +1107,11 @@ body {
 	-webkit-user-select: none;
 }
 
+#btnViewZombie:active {
+    background: url(images/interface/Button_Medium_down.png) no-repeat center !important;
+    line-height: 1.1;
+}
+
 #dHandBookPZ {
 	visibility: hidden;
 	position: absolute;
