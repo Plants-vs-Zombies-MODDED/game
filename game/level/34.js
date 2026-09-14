@@ -34,7 +34,7 @@ oS.Init(
 		PicArr: (function () {
 			return ["images/interface/backgroundLG.jpg"];
 		})(),
-		SunNum: 125,
+		SunNum: 175,
 		LF: [0, 3, 3, 3, 3, 3, 3],
 		backgroundImage: "images/interface/backgroundLG.jpg",
 		CanSelectCard: 1,
