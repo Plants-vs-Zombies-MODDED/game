@@ -1,4 +1,4 @@
-name: Format & stamp
+name: Main
 
 on:
     push:
@@ -12,7 +12,7 @@ permissions:
     deployments: write
 
 jobs:
-    format-and-stamp:
+    format-lint-stamp:
         runs-on: blacksmith-4vcpu-ubuntu-2404
         env:
             PNPM_HOME: /home/runner/.local/share/pnpm
@@ -44,7 +44,7 @@ jobs:
             - name: Install dependencies
               run: pnpm add -g oxlint oxfmt esbuild html-minifier-terser
 
-            - name: Lint, format & version stamp
+            - name: Lint, format & stamp
               run: |
                   pnpm run fix || true
                   pnpm oxfmt --write . "**/*.{js,md,html,css,yml}"
@@ -65,7 +65,7 @@ jobs:
 
     mirror:
         runs-on: blacksmith-2vcpu-ubuntu-2404
-        needs: format-and-stamp
+        needs: format-lint-stamp
         steps:
             - uses: actions/checkout@v4
               with:
