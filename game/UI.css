@@ -178,7 +178,7 @@ td.HandBookZombie {
 
 /* the funny */
 body {
-    animation: skew 30s cubic-bezier(0.075, 0.82, 0.165, 1) infinite alternate;
+	animation: skew 30s cubic-bezier(0.075, 0.82, 0.165, 1) infinite alternate;
 }
 
 /*
@@ -639,7 +639,7 @@ body {
 	cursor: url(images/interface/Pointer.cur), pointer;
 	width: 360px;
 	height: 100px;
-	margin-left: 29px;
+	margin-left: 30px;
 	display: inline;
 	color: #0f0;
 }
@@ -954,7 +954,6 @@ body {
 }
 
 @keyframes sun-collect-scale {
-
 	0%,
 	70% {
 		transform: scale(1);
@@ -1036,13 +1035,13 @@ body {
 	position: absolute;
 	width: 50%;
 	text-align: center;
-	padding-top: 135px;
+	padding-top: 30px;
 }
 
 #dHandBook .content div .button {
 	cursor: url(images/interface/Pointer.cur), pointer;
-	width: 152.5px;
-	height: 41px;
+	width: 152px;
+	height: 6px;
 	font-size: 14pt;
 	font-weight: bold;
 	font-family: Tahoma;
@@ -1073,7 +1072,9 @@ body {
 	cursor: url(images/interface/Pointer.cur), pointer;
 	margin-right: -24px;
 	width: 113;
-	height: 41;
+	height: 36px !important;
+	padding-top: 0 !important;
+	line-height: 1.5 !important;
 	border-left: 3px solid #85411c;
 	border-right: 3px solid #4e250c;
 	border-top: 3px solid #85411c;
@@ -1084,22 +1085,26 @@ body {
 	font-size: 14pt;
 	font-family: Tahoma;
 	margin-top: 43px;
+	margin-left: 155px;
 }
 
 #btnViewZombie {
 	cursor: url(images/interface/Pointer.cur), pointer;
-	width: 113;
-	height: 41;
+	background: url(images/interface/Button_Medium.png) no-repeat center !important;
+	background-size: contain;
+	width: 210px !important;
+	height: 56px !important;
 	background: #5a5d78;
 	color: #00f500;
+	overflow: visible;
 	font-size: 14pt;
 	font-family: Tahoma;
-	margin-top: 25px;
-	margin-left: -14px;
-	border-left: 3px solid #6c6c85;
-	border-right: 3px solid #595674;
-	border-top: 3px solid #6c6c85;
-	border-bottom: 3px solid #54546b;
+	margin-top: 6px;
+	margin-left: 110px !important;
+	text-align: center;
+	vertical-align: top;
+	user-select: none !important;
+	-webkit-user-select: none;
 }
 
 #dHandBookPZ {
@@ -2530,4 +2535,14 @@ button.jhp:hover {
 button.jhp:focus {
 	border: 1px solid #4d90fe;
 	outline: 0;
+}
+
+.settingsButtonIcon {
+	width: 1.5rem;
+	vertical-align: middle;
+	pointer-events: none;
+	height: 1.5rem;
+	margin-top: 4px;
+	position: absolute;
+	right: 125px;
 }

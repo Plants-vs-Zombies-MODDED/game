@@ -142,7 +142,6 @@
 	margin-top: 4px;
 }
 #btnViewZombie {
-	width: 155px !important;
 	color: #00c400 !important;
 	text-shadow:
 		1px 1px 0px rgba(255, 255, 255, 0.1),
@@ -229,8 +228,6 @@
         #757692 2px 0px, #757692 1px 2px, #757692 2px 2px !important; */
 	font-size: x-large !important;
 	-webkit-text-stroke: 0.2px rgb(0 0 0 / 27%) !important;
-	margin-left: -10px !important;
-	margin-top: -4px;
 }
 #dHandBookP > div.title,
 #dHandBook > div.title,
@@ -803,7 +800,7 @@ td {
 /*.balloonIdleSheet {
 	background-image: url(images/Zombies/Balloon/balloonidle.png);
 	background-repeat: no-repeat;
-	
+
 }
 
 .balloonPopSheet {

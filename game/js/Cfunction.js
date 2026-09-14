@@ -3245,7 +3245,7 @@ var ClickMenu = function (e, btn) {
 		ShowOptions();
 	}
 	$("sOptionsMenu").textContent = "Back To Game";
-	$("pauseHome").textContent = "Home";
+  $("pauseHome").innerHTML = 'Home <img src="images/interface/icon_house.png" alt="🏠" id="pauseHomeIcon" class="settingsButtonIcon" />';
 	$("pauseHome").onclick = function () {
 		let oldLv = oS.Lvl;
 		SelectModal(0);
@@ -3253,7 +3253,6 @@ var ClickMenu = function (e, btn) {
 		ShowNameDiv();
 		oS.Lvl = oldLv;
 	};
-	SetVisible($("pauseHomeIcon"));
 	if (ArCard[oS.ChoseCard] && ArCard[oS.ChoseCard].DID != null) {
 		CancelPlant();
 	}
@@ -3333,7 +3332,6 @@ var HiddenRiddleGame = function (isSilent) {
 var ShowOptions = function () {
 	$("sOptionsMenu").textContent = "OK";
 	$("pauseHome").textContent = "Credits";
-	SetHidden($("pauseHomeIcon"));
 	$("pauseHome").onclick = function () {
 		PlaySound2("tap");
 		LoadMenu("credits", undefined, {}, $("pauseHome"));
