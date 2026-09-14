@@ -5,7 +5,7 @@ export var oSnowRepeater = InheritO(oSnowPea, {
 	CName: "Snow Repeater",
 	SunNum: 250,
 	PicArr: [
-		"images/Card/Plants/SnowRepeater.png",
+		"images/Card/Plants/SnowRepeater.webp",
 		"images/Plants/SnowRepeater/0.gif",
 		"images/Plants/SnowRepeater/SnowPea.gif",
 		"images/Plants/PB-10.gif",

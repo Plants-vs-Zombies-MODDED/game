@@ -12,7 +12,7 @@ export var oSeaAnemone = InheritO(oGloomShroom, {
 	AudioArr: ["SeaAnemone"],
 	BookHandPosition: "48.5% 60%",
 	PicArr: [
-		"images/Card/Plants/SeaAnemone.png",
+		"images/Card/Plants/SeaAnemone.webp",
 		"images/Plants/SeaAnemone/0.gif",
 		"images/Plants/SeaAnemone/GloomShroom.gif",
 		"images/Plants/SeaAnemone/GloomShroomSleep.gif",

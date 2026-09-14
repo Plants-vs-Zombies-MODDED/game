@@ -13,7 +13,7 @@ export var oSunShroom = InheritO(oFumeShroom, {
 	AlmanacGif: 4,
 	BookHandPosition: "49% 58%",
 	PicArr: [
-		"images/Card/Plants/SunShroom.png",
+		"images/Card/Plants/SunShroom.webp",
 		"images/Plants/SunShroom/0.gif",
 		"images/Plants/SunShroom/SunShroom2.gif",
 		"images/Plants/SunShroom/SunShroomSleep.gif",

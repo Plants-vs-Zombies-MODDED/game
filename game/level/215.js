@@ -139,7 +139,7 @@ oS.Init(
 			11: [ShowFinalWave, 0],
 		},
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/FlamesMushroom.png", "left:667px;top:330px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/FlamesMushroom.webp", "left:667px;top:330px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oFlamesMushroom, 216);
 				},

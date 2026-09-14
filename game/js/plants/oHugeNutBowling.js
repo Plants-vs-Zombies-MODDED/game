@@ -9,7 +9,7 @@ export var oHugeNutBowling = InheritO(oNutBowling, {
 	beAttackedPointR: 137,
 	HP: 8e3,
 	Stature: 1,
-	PicArr: ["images/Card/Plants/HugeWallNut.png", "images/Plants/WallNut/2.webp", "images/Plants/WallNut/2.webp"],
+	PicArr: ["images/Card/Plants/HugeWallNut.webp", "images/Plants/WallNut/2.webp", "images/Plants/WallNut/2.webp"],
 	PrivateBirth(a) {
 		PlaySound2("bowling");
 		EditEle($(a.id).childNodes[1], {

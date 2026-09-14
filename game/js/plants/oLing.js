@@ -12,7 +12,7 @@ export var oLing = InheritO(oWallNut, {
 	getShadow(a) {
 		return "display:none";
 	},
-	PicArr: ["images/Card/Plants/Ling.png", "images/Plants/Ling/0.gif", "images/Plants/Ling/Ling.gif"],
+	PicArr: ["images/Card/Plants/Ling.webp", "images/Plants/Ling/0.gif", "images/Plants/Ling/Ling.gif"],
 	Tooltip: "Nanhu Ling is the first obstacle in the water",
 	Produce:
 		'Nanhu Ling is the first obstacle in the water<p>Toughness:<font color="CC241D">high</font></p>Look, how big is a cashew nut?</font><br>He said, but he didnt care. In Nanhulings head, every day only</font><br>think about one thing"If Qianlong didnt open the golden mouth, I wouldnt be able to use it</font><br>Horn to stab zombies? !"',

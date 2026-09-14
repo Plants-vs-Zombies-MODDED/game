@@ -1,0 +1,20 @@
+{
+	"short_name": "PVZM",
+	"name": "Plant vs. Zombies MODDED - Official",
+	"icons": [
+		{
+			"src": "/game/images/gameicon.png",
+			"type": "image/png",
+			"sizes": "500x500"
+		}
+	],
+	"id": "/game",
+	"start_url": "/game",
+	"background_color": "#8CEAFF",
+	"display": "standalone",
+	"scope": "/game",
+	"theme_color": "#8CEAFF",
+	"shortcuts": [{}],
+	"description": "Play Plant vs. Zombies MODDED Official as a Chrome extension - Also can Play without Internet, try it now!",
+	"screenshots": [{}]
+}

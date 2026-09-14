@@ -8,7 +8,7 @@ export var oSeedJalapeno = InheritO(oCherryBomb, {
 	SunNum: 0,
 	beAttackedPointR: 48,
 	PicArr: [
-		"images/Card/Plants/Jalapeno.png",
+		"images/Card/Plants/Jalapeno.webp",
 		"images/Plants/Jalapeno/0.gif",
 		"images/Plants/Jalapeno/Jalapeno.gif",
 		"images/Plants/Jalapeno/JalapenoAttack.gif",

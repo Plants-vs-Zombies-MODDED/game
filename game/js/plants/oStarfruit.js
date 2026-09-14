@@ -9,7 +9,7 @@ export var oStarfruit = InheritO(CPlants, {
 		return a[0] ? -17 : -10;
 	},
 	BookHandPosition: "47.5% 69%",
-	PicArr: ["images/Card/Plants/Starfruit.png", "images/Plants/Starfruit/0.gif", "images/Plants/Starfruit/Starfruit.gif", "images/Plants/Starfruit/Star.gif"],
+	PicArr: ["images/Card/Plants/Starfruit.webp", "images/Plants/Starfruit/0.gif", "images/Plants/Starfruit/Starfruit.gif", "images/Plants/Starfruit/Star.gif"],
 	Tooltip: "Shoots stars in 5 directions",
 	Produce:
 		'<font color="#28325A">Starfruits shoot stars in 5 directions.</font><p>Damage: <font color="#CC241D">normal</font><br>Range: <font color="#CC241D">5 directions</font><p>"Aw, man," says Starfruit. "I went to the dentist the other day and he said I have four cavities. I\'ve got --count it-- ONE tooth! Four cavities in one tooth? How does this happen?"',

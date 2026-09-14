@@ -12,7 +12,7 @@ export var oTallNut = InheritO(oWallNut, {
 	Stature: 1,
 	BookHandPosition: "50% 75%",
 	PicArr: [
-		"images/Card/Plants/TallNut.png",
+		"images/Card/Plants/TallNut.webp",
 		"images/Plants/TallNut/0.gif",
 		"images/Plants/TallNut/TallNut.gif",
 		"images/Plants/TallNut/TallnutCracked1.gif",

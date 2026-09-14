@@ -14,7 +14,7 @@ export var oTTS = InheritO(CPlants, {
 	BookHandPosition: "50% 150%",
 	AudioArr: ["TTS"],
 	PicArr: [
-		"images/Card/Plants/TTS.png",
+		"images/Card/Plants/TTS.webp",
 		"images/Plants/TTS/0.gif",
 		"images/Plants/TTS/Float.gif",
 		"images/Plants/TTS/Grab.png",

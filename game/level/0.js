@@ -131,8 +131,8 @@ oS.Init({
 		EBody = document.body;
 		$User.Mouse.listener = EBody.addEventListener("mousemove", (event) => {
 			var zoom = parseFloat(document.body.style.zoom) || 1;
-			$User.Mouse.x = Math.floor((event.clientX / zoom - EDAlloffsetLeft) / 0.9);
-			$User.Mouse.y = Math.floor((event.clientY / zoom - EDAlloffsetTop) / 0.9);
+			$User.Mouse.x = Math.floor(event.clientX / zoom - EDAlloffsetLeft);
+			$User.Mouse.y = Math.floor(event.clientY / zoom - EDAlloffsetTop);
 		});
 		EElement = document.documentElement;
 		EDAll.scrollLeft = 0;

@@ -12,7 +12,7 @@ export var oPumpkinHead = InheritO(CPlants, {
 	zIndex: 1,
 	BookHandPosition: "50% 76%",
 	PicArr: [
-		"images/Card/Plants/PumpkinHead.png",
+		"images/Card/Plants/PumpkinHead.webp",
 		"images/Plants/PumpkinHead/0.gif",
 		"images/Plants/PumpkinHead/PumpkinHead.gif",
 		"images/Plants/PumpkinHead/PumpkinHead1.gif",

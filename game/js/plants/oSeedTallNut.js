@@ -10,7 +10,7 @@ export var oSeedTallNut = InheritO(oWallNut, {
 	HP: 8e3,
 	coolTime: 24.5,
 	PicArr: [
-		"images/Card/Plants/TallNut.png",
+		"images/Card/Plants/TallNut.webp",
 		"images/Plants/TallNut/0.gif",
 		"images/Plants/TallNut/TallNut.gif",
 		"images/Plants/TallNut/TallnutCracked1.gif",

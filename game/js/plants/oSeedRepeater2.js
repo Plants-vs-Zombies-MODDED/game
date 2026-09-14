@@ -5,7 +5,7 @@ export var oSeedRepeater2 = InheritO(oRepeater, {
 	CName: "Reverse Repeater",
 	SunNum: 0,
 	PicArr: [
-		"images/Card/Plants/Repeater2.png",
+		"images/Card/Plants/Repeater2.webp",
 		"images/Plants/Repeater2/0.gif",
 		"images/Plants/Repeater2/Repeater2.gif",
 		"images/Plants/PB00.gif",

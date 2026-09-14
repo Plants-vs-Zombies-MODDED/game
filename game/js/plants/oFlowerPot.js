@@ -8,7 +8,7 @@ export var oFlowerPot = InheritO(CPlants, {
 	BookHandBack: "Roof",
 	//	HP: 1e3,
 	BookHandPosition: "49% 67%",
-	PicArr: ["images/Card/Plants/FlowerPot.png", "images/Plants/FlowerPot/0.gif", "images/Plants/FlowerPot/FlowerPot.gif"],
+	PicArr: ["images/Card/Plants/FlowerPot.webp", "images/Plants/FlowerPot/0.gif", "images/Plants/FlowerPot/FlowerPot.gif"],
 	PKind: 0,
 	Stature: -1,
 	GetDY(b, c, a) {

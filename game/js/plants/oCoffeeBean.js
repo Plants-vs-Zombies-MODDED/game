@@ -10,7 +10,7 @@ export var oCoffeeBean = InheritO(CPlants, {
 	canEat: 0,
 	BookHandPosition: "50% 95%",
 	PicArr: [
-		"images/Card/Plants/CoffeeBean.png",
+		"images/Card/Plants/CoffeeBean.webp",
 		"images/Plants/CoffeeBean/0.gif",
 		"images/Plants/CoffeeBean/CoffeeBean.gif",
 		"images/Plants/CoffeeBean/CoffeeBeanEat.gif" + $Random,

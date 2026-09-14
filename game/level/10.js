@@ -81,7 +81,7 @@ oS.Init(
 		},
 		FlagToMonitor: { 9: [ShowLargeWave, 0], 19: [ShowFinalWave, 0] },
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/PuffShroom.png", "left:667px;top:330px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/PuffShroom.webp", "left:667px;top:330px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oPuffShroom, 11);
 				},
@@ -103,15 +103,15 @@ oS.Init(
 			PlaySound2("seedlift");
 			a = window.event || a;
 			var f = ArCard[oS.ChoseCard];
-			var e = a.clientX - EDAlloffsetLeft + EBody.scrollLeft || EElement.scrollLeft;
-			var d = a.clientY + EBody.scrollTop || EElement.scrollTop;
+			var e = a.clientX - EDAlloffsetLeft + (EBody.scrollLeft || EElement.scrollLeft);
+			var d = a.clientY - EDAlloffsetTop + (EBody.scrollTop || EElement.scrollTop);
 			var c = f.PName.prototype;
 			oS.Chose = 1;
 			EditImg(
 				NewImg(
 					"MovePlant",
 					c.PicArr[c.StaticGif],
-					"left:" + e - 0.5 * (c.beAttackedPointL + c.beAttackedPointR) + "px;top:" + d + 20 - c.height + "px;z-index:254",
+					`left:${e - 0.5 * (c.beAttackedPointL + c.beAttackedPointR)}px;top:${d + 20 - c.height}px;z-index:254`,
 					EDAll
 				).cloneNode(false),
 				"MovePlantAlpha",
@@ -168,7 +168,10 @@ oS.Init(
 			var c = $("dTitle");
 			var b = ArCard[a].PName.prototype;
 			c.innerHTML = b.CName + "<br>" + b.Tooltip;
-			SetStyle(c, { top: 60 * a + "px", left: "100px" });
+			const rect = EDAll.getBoundingClientRect();
+			EDAlloffsetLeft = rect.left;
+			EDAlloffsetTop = rect.top;
+			SetStyle(c, { top: EDAlloffsetTop + 60 * a + "px", left: EDAlloffsetLeft + 100 + "px" });
 		},
 	}
 );

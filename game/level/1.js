@@ -138,7 +138,7 @@ oS.Init(
 		FlagToSumNum: { a1: [3], a2: [1, 2] },
 		FlagToMonitor: { 4: [ShowFinalWave, 0] },
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/SunFlower.png", "left:667px;top:330px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/SunFlower.webp", "left:667px;top:330px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oSunFlower, 2);
 				},

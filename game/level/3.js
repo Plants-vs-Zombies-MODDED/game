@@ -50,7 +50,7 @@ oS.Init(
 		FlagToSumNum: { a1: [3, 5, 7], a2: [1, 2, 3, 6] },
 		FlagToMonitor: { 7: [ShowFinalWave, 0] },
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/WallNut.png", "left:827px;top:330px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/WallNut.webp", "left:827px;top:330px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oWallNut, 4);
 				},

@@ -84,7 +84,7 @@ oS.Init(
 		},
 		FlagToMonitor: {},
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/GloomShroom.png", "left:827px;top:525px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/GloomShroom.webp", "left:827px;top:525px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oGloomShroom, 49);
 				},

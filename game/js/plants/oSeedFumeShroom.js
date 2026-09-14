@@ -9,7 +9,7 @@ export var oSeedFumeShroom = InheritO(CPlants, {
 	SleepGif: 3,
 	night: true,
 	PicArr: [
-		"images/Card/Plants/FumeShroom.png",
+		"images/Card/Plants/FumeShroom.webp",
 		"images/Plants/FumeShroom/0.gif",
 		"images/Plants/FumeShroom/FumeShroom.gif",
 		"images/Plants/FumeShroom/FumeShroomSleep.gif",

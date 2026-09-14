@@ -8,7 +8,7 @@ export var oChomper = InheritO(CPlants, {
 	BookHandPosition: "56% 54%",
 	AudioArr: ["bigchomp"],
 	PicArr: [
-		"images/Card/Plants/Chomper.png",
+		"images/Card/Plants/Chomper.webp",
 		"images/Plants/Chomper/0.gif",
 		"images/Plants/Chomper/Chomper.gif",
 		"images/Plants/Chomper/ChomperAttack.gif",

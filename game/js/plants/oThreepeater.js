@@ -9,7 +9,7 @@ export var oThreepeater = InheritO(oPeashooter, {
 	SunNum: 325,
 	BookHandPosition: "50% 60%",
 	PicArr: [
-		"images/Card/Plants/Threepeater.png",
+		"images/Card/Plants/Threepeater.webp",
 		"images/Plants/Threepeater/0.gif",
 		"images/Plants/Threepeater/Threepeater.gif",
 		"images/Plants/PB00.gif",

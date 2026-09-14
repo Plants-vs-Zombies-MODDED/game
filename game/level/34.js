@@ -69,7 +69,7 @@ oS.Init(
 			29: [ShowFinalWave, 0],
 		},
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/TenManNut.png", "left:627px;top:325px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/TenManNut.webp", "left:627px;top:325px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oTenManNut, 35);
 				},

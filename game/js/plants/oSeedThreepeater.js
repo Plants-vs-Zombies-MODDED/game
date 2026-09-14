@@ -8,7 +8,7 @@ export var oSeedThreepeater = InheritO(oPeashooter, {
 	beAttackedPointR: 53,
 	SunNum: 0,
 	PicArr: [
-		"images/Card/Plants/Threepeater.png",
+		"images/Card/Plants/Threepeater.webp",
 		"images/Plants/Threepeater/0.gif",
 		"images/Plants/Threepeater/Threepeater.gif",
 		"images/Plants/PB00.gif",

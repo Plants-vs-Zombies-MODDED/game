@@ -6,7 +6,7 @@ export var oSeedSquash = InheritO(CPlants, {
 	beAttackedPointR: 67,
 	SunNum: 0,
 	PicArr: [
-		"images/Card/Plants/Squash.png",
+		"images/Card/Plants/Squash.webp",
 		"images/Plants/Squash/0.gif",
 		"images/Plants/Squash/Squash.gif",
 		"images/Plants/Squash/SquashAttack.gif",

@@ -8,7 +8,7 @@ export var oGarlic = InheritO(CPlants, {
 	HP: 400,
 	BookHandPosition: "49% 67%",
 	PicArr: [
-		"images/Card/Plants/Garlic.png",
+		"images/Card/Plants/Garlic.webp",
 		"images/Plants/Garlic/0.gif",
 		"images/Plants/Garlic/Garlic.gif",
 		"images/Plants/Garlic/Garlic_body2.gif",

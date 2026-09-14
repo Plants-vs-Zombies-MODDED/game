@@ -65,7 +65,7 @@ oS.Init(
 			29: [ShowFinalWave, 0],
 		},
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/TTS.png", "left:627px;top:325px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/TTS.webp", "left:627px;top:325px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oTTS, 33);
 				},

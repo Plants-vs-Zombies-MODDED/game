@@ -10,7 +10,7 @@ export var oSpikerock = InheritO(oSpikeweed, {
 	SunNum: 125,
 	BookHandPosition: "49% 80%",
 	PicArr: [
-		"images/Card/Plants/Spikerock.png",
+		"images/Card/Plants/Spikerock.webp",
 		"images/Plants/Spikerock/0.gif",
 		"images/Plants/Spikerock/Spikerock.gif",
 		"images/Plants/Spikerock/2.gif",

@@ -10,7 +10,7 @@ export const oSeedCactus = InheritO(CPlants, {
 	Status: 0,
 	PicArr: (function () {
 		return [
-			"images/Card/Plants/Cactus.png",
+			"images/Card/Plants/Cactus.webp",
 			"images/Plants/Cactus/0.gif",
 			"images/Plants/Cactus/Cactus.gif",
 			"images/Plants/Cactus/Cactus2.gif",

@@ -12,7 +12,7 @@ export var oDoomShroom = InheritO(oFumeShroom, {
 	AudioArr: ["doomshroom"],
 	BookHandPosition: "48% 58%",
 	PicArr: [
-		"images/Card/Plants/DoomShroom.png",
+		"images/Card/Plants/DoomShroom.webp",
 		"images/Plants/DoomShroom/0.gif",
 		"images/Plants/DoomShroom/DoomShroom.gif",
 		"images/Plants/DoomShroom/Sleep.gif",

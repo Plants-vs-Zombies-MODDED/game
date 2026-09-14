@@ -128,7 +128,7 @@ oS.Init(
 		FlagToSumNum: { a1: [3, 5, 9], a2: [1, 2, 3, 10] },
 		FlagToMonitor: { 9: [ShowLargeWave, 0] },
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/HypnoShroom.png", "left:827px;top:525px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/HypnoShroom.webp", "left:827px;top:525px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oHypnoShroom, 16);
 				},

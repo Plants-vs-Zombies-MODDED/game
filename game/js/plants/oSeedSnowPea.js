@@ -6,7 +6,7 @@ export var oSeedSnowPea = InheritO(oPeashooter, {
 	SunNum: 0,
 	BKind: -1,
 	PicArr: [
-		"images/Card/Plants/SnowPea.png",
+		"images/Card/Plants/SnowPea.webp",
 		"images/Plants/SnowPea/0.gif",
 		"images/Plants/SnowPea/SnowPea.gif",
 		"images/Plants/PB-10.gif",

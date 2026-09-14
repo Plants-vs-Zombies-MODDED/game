@@ -93,7 +93,7 @@ oS.Init(
 		},
 		FlagToMonitor: { 9: [ShowLargeWave, 0], 19: [ShowFinalWave, 0] },
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/LilyPad.png", "left:667px;top:330px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/LilyPad.webp", "left:667px;top:330px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oLilyPad, 21);
 				},
@@ -112,15 +112,15 @@ oS.Init(
 			PlaySound2("seedlift");
 			a = window.event || a;
 			var f = ArCard[oS.ChoseCard];
-			var e = a.clientX - EDAlloffsetLeft + EBody.scrollLeft || EElement.scrollLeft;
-			var d = a.clientY + EBody.scrollTop || EElement.scrollTop;
+			var e = a.clientX - EDAlloffsetLeft + (EBody.scrollLeft || EElement.scrollLeft);
+			var d = a.clientY - EDAlloffsetTop + (EBody.scrollTop || EElement.scrollTop);
 			var c = f.PName.prototype;
 			oS.Chose = 1;
 			EditImg(
 				NewImg(
 					"MovePlant",
 					c.PicArr[c.StaticGif],
-					"left:" + e - 0.5 * (c.beAttackedPointL + c.beAttackedPointR) + "px;top:" + d + 20 - c.height + "px;z-index:254",
+					`left:${e - 0.5 * (c.beAttackedPointL + c.beAttackedPointR)}px;top:${d + 20 - c.height}px;z-index:254`,
 					EDAll
 				).cloneNode(false),
 				"MovePlantAlpha",

@@ -740,8 +740,11 @@
 			var c = $("dTitle");
 			var b = ArCard[a].PName.prototype;
 			c.innerHTML = b.CName + "<br>" + b.Tooltip;
+			const rect = EDAll.getBoundingClientRect();
+			EDAlloffsetLeft = rect.left;
+			EDAlloffsetTop = rect.top;
 			SetStyle(c, {
-				top: 60 * a + "px",
+				top: EDAlloffsetTop + 60 * a + "px",
 				left: EDAlloffsetLeft + 100 + "px",
 			});
 		},

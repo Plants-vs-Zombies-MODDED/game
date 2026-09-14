@@ -4,7 +4,7 @@ export var oBoomNutBowling = InheritO(oNutBowling, {
 	EName: "oBoomNutBowling",
 	CName: "Explode-o-nut",
 	PicArr: [
-		"images/Card/Plants/BoomWallNut.png",
+		"images/Card/Plants/BoomWallNut.webp",
 		"images/Plants/WallNut/1.gif",
 		"images/Plants/WallNut/BoomWallNut.webp",
 		"images/Plants/CherryBomb/Boom.gif",

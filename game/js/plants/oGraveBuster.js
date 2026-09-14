@@ -8,7 +8,7 @@ export var oGraveBuster = InheritO(CPlants, {
 	BookHandBack: "Night",
 	canEat: 0,
 	BookHandPosition: "48% 97%",
-	PicArr: ["images/Card/Plants/GraveBuster.png", "images/Plants/GraveBuster/0.gif", "images/Plants/GraveBuster/GraveBuster.gif" + $Random + Math.random()],
+	PicArr: ["images/Card/Plants/GraveBuster.webp", "images/Plants/GraveBuster/0.gif", "images/Plants/GraveBuster/GraveBuster.gif" + $Random + Math.random()],
 	AudioArr: ["gravebusterchomp"],
 	CanGrow(b, a, d) {
 		var c = oS.ArP;

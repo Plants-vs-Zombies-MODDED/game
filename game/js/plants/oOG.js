@@ -7,7 +7,7 @@ export var oOG = InheritO(CPlants, {
 	SunNum: 0,
 	canEat: 0,
 	BookHandBack: "Undersea",
-	PicArr: ["images/Card/Plants/Oxygen.png", "images/Plants/Oxygen/0.gif", "images/Plants/Oxygen/Oxygen1.gif"],
+	PicArr: ["images/Card/Plants/Oxygen.webp", "images/Plants/Oxygen/0.gif", "images/Plants/Oxygen/Oxygen1.gif"],
 	PKind: 0,
 	Stature: -1,
 	GetDY(b, c, a) {

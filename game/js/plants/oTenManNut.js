@@ -10,7 +10,7 @@ export var oTenManNut = InheritO(CPlants, {
 	Stature: 1,
 	canEat: 1,
 	BookHandPosition: "52% 114%",
-	PicArr: ["images/Card/Plants/TenManNut.png", "images/Plants/TenManNut/0.gif", "images/Plants/TenManNut/Spikeweed.gif"],
+	PicArr: ["images/Card/Plants/TenManNut.webp", "images/Plants/TenManNut/0.gif", "images/Plants/TenManNut/Spikeweed.gif"],
 	Attack: 40,
 	ArZ: {},
 	Tooltip: "Damages zombies that eat it",

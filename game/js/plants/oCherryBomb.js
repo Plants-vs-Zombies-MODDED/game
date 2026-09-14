@@ -8,7 +8,7 @@ export var oCherryBomb = InheritO(CPlants, {
 	coolTime: 20,
 	AlmanacGif: 1,
 	PicArr: [
-		"images/Card/Plants/CherryBomb.png",
+		"images/Card/Plants/CherryBomb.webp",
 		"images/Plants/CherryBomb/0.gif",
 		"images/Plants/CherryBomb/CherryBomb.gif",
 		"images/Plants/CherryBomb/Boom.gif" + $Random,

@@ -15,7 +15,7 @@ export var oTangleKlep = InheritO(CPlants, {
 	NormalGif: 1,
 	AudioArr: ["TangleKlep"],
 	PicArr: [
-		"images/Card/Plants/TangleKlep.png",
+		"images/Card/Plants/TangleKlep.webp",
 		"images/Plants/TangleKlep/0.gif",
 		"images/Plants/TangleKlep/Float.gif",
 		"images/Plants/TangleKlep/Grab.png",

@@ -9,7 +9,7 @@ export var oTwinSunflower = InheritO(oSunFlower, {
 	SunNum: 150,
 	BookHandPosition: "49% 60%",
 	PicArr: [
-		"images/Card/Plants/TwinSunflower.png",
+		"images/Card/Plants/TwinSunflower.webp",
 		"images/Plants/TwinSunflower/0.gif",
 		"images/Plants/TwinSunflower/TwinSunflower1.gif",
 		"images/Plants/TwinSunflower/TwinSunflower.gif",

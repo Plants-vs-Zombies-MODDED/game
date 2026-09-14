@@ -58,7 +58,7 @@ oS.Init(
 		},
 		FlagToMonitor: { 9: [ShowLargeWave, 0], 19: [ShowFinalWave, 0] },
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/TangleKlep.png", "left:627px;top:325px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/TangleKlep.webp", "left:627px;top:325px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					SelectModal(24);
 				},

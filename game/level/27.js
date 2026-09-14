@@ -82,7 +82,7 @@ oS.Init(
 			29: [ShowFinalWave, 0],
 		},
 		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/Torchwood.png", "left:627px;top:325px;clip:rect(auto,auto,60px,auto)", EDAll, {
+			NewImg("imgSF", "images/Card/Plants/Torchwood.webp", "left:627px;top:325px;clip:rect(auto,auto,60px,auto)", EDAll, {
 				onclick() {
 					GetNewCard(this, oTorchwood, 28);
 				},

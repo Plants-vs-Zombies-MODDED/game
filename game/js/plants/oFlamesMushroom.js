@@ -11,7 +11,7 @@ export var oFlamesMushroom = InheritO(CPlants, {
 	BookHandBack: "Night",
 	coolTime: 30,
 	PicArr: [
-		"images/Card/Plants/FlamesMushroom.png",
+		"images/Card/Plants/FlamesMushroom.webp",
 		"images/Plants/FlamesMushroom/0.gif",
 		"images/Plants/FlamesMushroom/FlamesMushroom.gif",
 		"images/Plants/FlamesMushroom/FlamesMushroom1.gif",
