@@ -3245,11 +3245,7 @@ var ClickMenu = function (e, btn) {
 		ShowOptions();
 	}
 	$("sOptionsMenu").textContent = "Back To Game";
-<<<<<<< HEAD
-  $("pauseHome").innerHTML = 'Home <img src="images/interface/icon_house.png" alt="🏠" id="pauseHomeIcon" class="settingsButtonIcon" />';
-=======
 	$("pauseHome").innerHTML = 'Home <img src="images/interface/icon_house.png" alt="🏠" id="pauseHomeIcon" class="settingsButtonIcon" />';
->>>>>>> 7256d5cc5ce0c7e77c6ff69a569a8b4ad194633a
 	$("pauseHome").onclick = function () {
 		let oldLv = oS.Lvl;
 		SelectModal(0);
