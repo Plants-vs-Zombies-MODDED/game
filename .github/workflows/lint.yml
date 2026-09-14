@@ -1,0 +1,13 @@
+name: Lint
+
+on: pull_request
+
+permissions:
+    contents: read
+
+jobs:
+    oxlint:
+        runs-on: blacksmith-2vcpu-ubuntu-2404
+        steps:
+            - uses: actions/checkout@v4
+            - run: npx --yes oxlint@latest --format=github

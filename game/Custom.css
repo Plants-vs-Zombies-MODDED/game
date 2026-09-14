@@ -219,7 +219,11 @@
 	margin-top: -4px;
 }
 #btnViewPlant {
+<<<<<<< HEAD
 	color: #D19B36 !important;
+=======
+	color: #d19b36 !important;
+>>>>>>> 7256d5cc5ce0c7e77c6ff69a569a8b4ad194633a
 	text-shadow:
 		1px 1px 0px rgba(255, 255, 255, 0.1),
 		-1px -1.5px 0px rgba(0, 0, 0, 0.5),
@@ -242,6 +246,7 @@
 	font-weight: lighter;
 	text-shadow:
 			/* */
+<<<<<<< HEAD
 			-1px -1px 0px #000,
 			 0px -1px 0px #000,
 			 1px -1px 0px #000,
@@ -285,6 +290,43 @@
 			 5px  5px 0px #000,
 			 5px  4px 0px #000,
 			 4px  5px 0px #000;
+=======
+		-1px -1px 0px #000,
+		0px -1px 0px #000,
+		1px -1px 0px #000,
+		-1px 0px 0px #000,
+		-1px 1px 0px #000,
+		-2px -1px 0px #000,
+		-1px -2px 0px #000,
+		-2px -2px 0px #000,
+		/* */ 1px 0px 0px #000,
+		0px 1px 0px #000,
+		1px 1px 0px #000,
+		2px 0px 0px #000,
+		2px 1px 0px #000,
+		2px 2px 0px #000,
+		1px 2px 0px #000,
+		0px 2px 0px #000,
+		/* */ 3px 0px 0px #000,
+		3px 1px 0px #000,
+		3px 2px 0px #000,
+		3px 3px 0px #000,
+		2px 3px 0px #000,
+		1px 3px 0px #000,
+		0px 3px 0px #000,
+		/* */ 4px 0px 0px #000,
+		4px 1px 0px #000,
+		4px 2px 0px #000,
+		4px 3px 0px #000,
+		4px 4px 0px #000,
+		3px 4px 0px #000,
+		2px 4px 0px #000,
+		1px 4px 0px #000,
+		0px 4px 0px #000,
+		/* */ 5px 5px 0px #000,
+		5px 4px 0px #000,
+		4px 5px 0px #000;
+>>>>>>> 7256d5cc5ce0c7e77c6ff69a569a8b4ad194633a
 }
 #dHandBook > div.title,
 #dMiniSmallTitle,
