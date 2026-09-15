@@ -2556,6 +2556,7 @@ button.jhp:focus {
 
 .hidden {
     display: none;
+    height: 0px;
 }
 
 .flex {
