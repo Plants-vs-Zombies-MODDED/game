@@ -335,8 +335,8 @@ async function loadPage(targetPage) {
         Accept: "application/msgpack",
       },
     });
-    errorText.classList.remove('flex')
-    errorText.classList.add('hidden')
+    errorText.classList.remove('hidden')
+    errorText.classList.add('flex')
 
     if (!response.ok) {
       throw new Error(`Fail: ${response.status}`)
@@ -359,6 +359,7 @@ async function loadPage(targetPage) {
 
     renderPagination(pagination);
   } catch (error) {
+    clearLevels();
     errorText.classList.remove('hidden')
     errorText.classList.add('flex')
     console.log(error)
