@@ -1,3 +1,5 @@
+const titlebar = document.getElementById("debugMenu");
+
 let keySequence = "";
 let sequenceTimeout = null;
 
@@ -41,7 +43,9 @@ let cheatCodes = {
 		// PlaySound2("tap");
 	},
 	debig: () => {
-		import("./Debug.js");
+    import("./Debug.js");
+    titlebar.classList.remove('hidden')
+    titlebar.classList.add('flex')
 	},
 };
 
