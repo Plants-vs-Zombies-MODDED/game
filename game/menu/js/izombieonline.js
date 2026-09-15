@@ -335,6 +335,8 @@ async function loadPage(targetPage) {
         Accept: "application/msgpack",
       },
     });
+    errorText.classList.remove('flex')
+    errorText.classList.add('hidden')
 
     if (!response.ok) {
       throw new Error(`Fail: ${response.status}`)
