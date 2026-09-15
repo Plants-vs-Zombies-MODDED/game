@@ -914,7 +914,45 @@
 				</div>
 			</div>
 		</div>
-		<div id="debugMenu" class="WindowFrame" style="left: calc(50% + 450px); width: 300px; overflow: visible"></div>
+		<div
+			id="debugMenu"
+			class="WindowFrame"
+			style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; z-index: 10000; overflow: visible; display: flex; flex-direction: column; gap: 0px 4px; height: 32px"
+		>
+			<div id="debugMenuHeader" style="background: #333; color: #fff; padding: 4px; cursor: move; font-size: 12px; font-weight: medium; display: flex; gap: 4px;"><img style="width: 16px; padding-right: 2px;" src="images/interface/clipboard.png"><div>Debug Menu</div></div>
+		</div>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const debugMenu = document.getElementById("debugMenu");
+				const header = document.getElementById("debugMenuHeader");
+
+				let isDragging = false;
+				let startX, startY;
+
+				header.addEventListener("mousedown", (e) => {
+					isDragging = true;
+
+					startX = e.clientX - debugMenu.offsetLeft;
+					startY = e.clientY - debugMenu.offsetTop;
+
+					e.preventDefault();
+				});
+
+				document.addEventListener("mousemove", (e) => {
+					if (!isDragging) return;
+
+					let newX = e.clientX - startX;
+					let newY = e.clientY - startY;
+
+					debugMenu.style.left = `${newX}`;
+					debugMenu.style.top = `${newY}`;
+
+					document.addEventListener("mouseup", () => {
+						isDragging = false;
+					});
+				});
+			});
+		</script>
 		<!-- izombie lvl saving stuffs -->
 		<!--本网页来自江南游戏 || pvzweb.usa3v.net-->
 		<button id="changelog" style="z-index: 99999; position: fixed; bottom: 8px; left: 50%; margin-left: -400px; display: none">Changelog</button>

@@ -1,3 +1,5 @@
+const header = document.getElementById("debugMenuHeader");
+
 let keySequence = "";
 let sequenceTimeout = null;
 

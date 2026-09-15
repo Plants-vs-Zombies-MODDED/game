@@ -476,6 +476,8 @@ body {
 	top: 428px;
 	width: 99px;
 	height: 99px;
+	clip-path: path("M30.5001 6.5C30.5001 6.5 54.0001 12 54.0001 12C54.0001 12 64.7501 11.25 75.5001 13C86.2502 14.75 92.9529 18.9462 93.0009 19L93.5001 23.5L97 26.829L97 31C97 31 77.0126 60.8057 80.0008 90.5003C80.0008 90.5003 78.2571 98.8269 75.0007 99C75.0007 99 15.27769 83.1458 13.50072 83C11.72374 82.8543 9.6682 78.9514 12.50072 76C15.33323 73.0486 8.837882 80.4532 8.500358 67.5C8.162834 54.5469 13.50072 54 13.50072 54L16.00014 55C16.00014 55 24.0388 30.4601 23.0001 30C21.9614 29.5399 18.8925 20.843 22.0001 17C25.1078 13.15698 28.5001 15.5 28.5001 15.5L30.5001 6.5Z");
+	overflow:visible;
 	cursor: url(images/interface/Pointer.cur), pointer;
 	background: url(images/interface/SelectorScreen_Almanac_32.png) no-repeat;
 	_background: url(images/interface/SelectorScreen_Almanac_8.png) no-repeat;
@@ -2550,4 +2552,12 @@ button.jhp:focus {
 	margin-top: 4px;
 	position: absolute;
 	right: 125px;
+}
+
+.hidden {
+    display: none;
+}
+
+.flex {
+    display: flex;
 }

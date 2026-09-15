@@ -324,32 +324,45 @@ function clearLevels() {
 }
 
 async function loadPage(targetPage) {
-	page = targetPage;
-	const id = ++requestId;
+  page = targetPage;
+  const id = ++requestId;
+  const errorText = document.getElementById("iz-level-unavailable")
+  try {
 
-	const response = await fetch(`${$User.Server.URL}/api/levels?page=${page}&limit=${limit}&sort=${Object.keys(sorts)[currentSortIndex]}`, {
-		method: "GET",
-		headers: {
-			Accept: "application/msgpack",
-		},
-	});
-	const data = msgpack.deserialize(await response.arrayBuffer());
-	if (id !== requestId) {
-		return;
-	}
+    const response = await fetch(`${$User.Server.URL}/api/levels?page=${page}&limit=${limit}&sort=${Object.keys(sorts)[currentSortIndex]}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/msgpack",
+      },
+    });
 
-	const levels = data.levels ?? [];
-	const pagination = data.pagination ?? { page, limit, pages: 1, total: levels.length };
-	limit = Number(pagination.limit ?? limit);
+    if (!response.ok) {
+      throw new Error(`Fail: ${response.status}`)
+    }
 
-	clearLevels();
-	levels.forEach((level) => {
-		const levelCard = createLevelCard(level);
-		levelContainer.appendChild(levelCard);
-	});
+    const data = msgpack.deserialize(await response.arrayBuffer());
+    if (id !== requestId) {
+      return;
+    }
 
-	renderPagination(pagination);
+    const levels = data.levels ?? [];
+    const pagination = data.pagination ?? { page, limit, pages: 1, total: levels.length };
+    limit = Number(pagination.limit ?? limit);
+
+    clearLevels();
+    levels.forEach((level) => {
+      const levelCard = createLevelCard(level);
+      levelContainer.appendChild(levelCard);
+    });
+
+    renderPagination(pagination);
+  } catch (error) {
+    errorText.classList.remove('hidden')
+    errorText.classList.add('flex')
+    console.log(error)
+  }
 }
+
 
 // set initial menu title
 menuTitle.textContent = `${Object.values(sorts)[currentSortIndex]} Online Levels`;
