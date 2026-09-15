@@ -43,9 +43,9 @@ let cheatCodes = {
 		// PlaySound2("tap");
 	},
 	debig: () => {
-    import("./Debug.js");
-    titlebar.classList.remove('hidden')
-    titlebar.classList.add('flex')
+		import("./Debug.js");
+		titlebar.classList.remove("hidden");
+		titlebar.classList.add("flex");
 	},
 };
 
