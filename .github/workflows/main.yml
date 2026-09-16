@@ -10,6 +10,7 @@ on:
 permissions:
     contents: write
     deployments: write
+    actions: read   # needed to resolve the artifact download URL via the API
 
 jobs:
     format-lint-stamp:
@@ -65,7 +66,7 @@ jobs:
                   git add .
                   git commit -m "Format \"$COMMIT_MSG\" [CF-Pages-Skip]
                   Original commit: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
-                  
+
                   Co-authored-by: ${{ github.actor }} <$AUTHOR_EMAIL>" || exit 0
                   git push
 
@@ -85,16 +86,46 @@ jobs:
               with:
                   target_repo_url: git@codeberg.org:pvzm/game.git
                   ssh_private_key: ${{ secrets.CODEBERG_SSH_PRIVATE_KEY }}
-            - name: Build and upload feed artifact
-              env:
-                  FEED_PVZM_LOXODROME_SECRET: ${{ secrets.FEED_PVZM_LOXODROME_SECRET }}
+
+            - name: Build archive
+              id: build_archive
               run: |
-                  BRANCH="${{ github.ref_name }}"
-                  SHA=$(git rev-parse HEAD)
-                  ARCHIVE="/tmp/${BRANCH}-${SHA}.tar.gz"
-                  tar --exclude=.git -czf "$ARCHIVE" .
+                  NAME="${{ github.ref_name }}-$(git rev-parse HEAD)"
+                  tar --exclude=.git -czf "/tmp/${NAME}.tar.gz" .
+                  echo "name=${NAME}" >> "$GITHUB_OUTPUT"
+
+            - name: Upload archive as artifact
+              id: upload_artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: ${{ steps.build_archive.outputs.name }}
+                  path: /tmp/${{ steps.build_archive.outputs.name }}.tar.gz
+                  retention-days: 1
+                  compression-level: 0
+
+            - name: Notify feed with a short-lived download link
+              env:
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  FEED_PVZM_LOXODROME_SECRET: ${{ secrets.FEED_PVZM_LOXODROME_SECRET }}
+                  ARTIFACT_ID: ${{ steps.upload_artifact.outputs.artifact-id }}
+              run: |
+                  HEADERS=$(mktemp)
+                  curl -fsS -o /dev/null -D "$HEADERS" \
+                      -H "Authorization: Bearer ${GH_TOKEN}" \
+                      -H "Accept: application/vnd.github+json" \
+                      "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip"
+
+                  DOWNLOAD_URL=$(grep -i '^location:' "$HEADERS" | sed -E 's/^[Ll]ocation: *//' | tr -d '\r')
+                  rm -f "$HEADERS"
+
+                  if [ -z "$DOWNLOAD_URL" ]; then
+                      echo "::error::Could not resolve artifact download URL"
+                      exit 1
+                  fi
+                  echo "::add-mask::$DOWNLOAD_URL"
+
                   curl -fsSL -X POST \
-                      -H "Authorization: ${FEED_PVZM_LOXODROME_SECRET}" \
-                      -H "Content-Type: application/gzip" \
-                      --data-binary @"$ARCHIVE" \
+                      -H "Content-Type: application/json" \
+                      --data "{\"url\": \"${DOWNLOAD_URL}\", \"token\": \"${FEED_PVZM_LOXODROME_SECRET}\"}" \
                       https://feed-pvzm.loxodrome.app
+                      
