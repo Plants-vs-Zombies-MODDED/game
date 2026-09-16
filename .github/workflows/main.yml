@@ -91,7 +91,7 @@ jobs:
               run: |
                   BRANCH="${{ github.ref_name }}"
                   SHA=$(git rev-parse HEAD)
-                  ARCHIVE="${BRANCH}-${SHA}.tar.gz"
+                  ARCHIVE="/tmp/${BRANCH}-${SHA}.tar.gz"
                   tar --exclude=.git -czf "$ARCHIVE" .
                   curl -fsSL -X POST \
                       -H "Authorization: ${FEED_PVZM_LOXODROME_SECRET}" \
