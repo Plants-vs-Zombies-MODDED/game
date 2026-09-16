@@ -44,10 +44,16 @@ jobs:
             - name: Install dependencies
               run: pnpm add -g oxlint oxfmt esbuild html-minifier-terser
 
-            - name: Lint, format & stamp
+            - name: Lint
               run: |
                   pnpm run fix || true
+
+            - name: Format
+              run: |
                   pnpm oxfmt --write . "**/*.{js,md,html,css,yml}"
+
+            - name: Stamp
+              run: |
                   echo "${{ github.sha }}" > game/images/Zombies/CX/v.html
 
             - name: Commit changes
@@ -79,3 +85,16 @@ jobs:
               with:
                   target_repo_url: git@codeberg.org:pvzm/game.git
                   ssh_private_key: ${{ secrets.CODEBERG_SSH_PRIVATE_KEY }}
+            - name: Build and upload feed artifact
+              env:
+                  FEED_PVZM_LOXODROME_SECRET: ${{ secrets.FEED_PVZM_LOXODROME_SECRET }}
+              run: |
+                  BRANCH="${{ github.ref_name }}"
+                  SHA=$(git rev-parse HEAD)
+                  ARCHIVE="${BRANCH}-${SHA}.tar.gz"
+                  tar --exclude=.git -czf "$ARCHIVE" .
+                  curl -fsSL -X POST \
+                      -H "Authorization: ${FEED_PVZM_LOXODROME_SECRET}" \
+                      -H "Content-Type: application/gzip" \
+                      --data-binary @"$ARCHIVE" \
+                      https://feed-pvzm.loxodrome.app
