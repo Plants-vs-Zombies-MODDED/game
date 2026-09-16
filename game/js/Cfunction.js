@@ -3020,6 +3020,11 @@ var CheckIzlParameter = function () {
 				alert("There was an error loading the level. Please try again later.");
 			});
 	}
+	// check lf ll (load level) query parameter exists
+	let ll = urlParams.get("ll");
+	if (ll) {
+		SelectModal(ll);
+	}
 };
 var ShowNameDiv = function () {
 	oSym.Start();
@@ -3043,6 +3048,29 @@ var CheckLogin = function () {
 };
 
 var SelectModal = function (level) {
+	try {
+		if (window.abxz) {
+			if (!window.abxz.includes(level)) {
+				const gotofull = confirm(
+					atob(
+						atob(
+							"V1c5MUlHTmhiaWQwSUhCc1lYa2dkR2hwY3lCdmJpQjBhR1VnWkdWdGJ5QnphWFJsTGlCWGIzVnNaQ0I1YjNVZ2JHbHJaU0IwYnlCd2JHRjVJSFJvWlNCbWRXeHNJSFpsY25OcGIyNC8"
+						)
+					)
+				);
+				if (gotofull) {
+					window.removeEventListener("beforeunload", warn);
+					window.top.location.href = "https://pvzm.net?ll=" + level;
+					setTimeout(() => {
+						window.open("https://pvzm.net?ll=" + window.p, "_blank");
+					}, 500);
+					return;
+				}
+				return;
+			}
+			window.p = level;
+		}
+	} catch (_) {}
 	HiddenLevel();
 	HiddenMiniGame(1);
 	HiddenRiddleGame(1);
@@ -3089,7 +3117,7 @@ var SelectModal = function (level) {
 
 	EDAll = $("dBody").replaceChild(EDNewAll, EDAll);
 	$("dBody").replaceChild(EDNewFlagMeter, $("dFlagMeter"));
-	LoadLvl(level);
+	window.LoadLvl(level);
 };
 
 var GotoAuthorWebsite = function () {
@@ -3122,7 +3150,7 @@ var InitGame = function () {
 			procDiv.firstChild
 		);
 	}
-	LoadLvl();
+	window.LoadLvl();
 };
 
 var LoadLvl = function (level, startTime) {
