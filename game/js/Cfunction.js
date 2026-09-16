@@ -3024,6 +3024,10 @@ var CheckIzlParameter = function () {
 	let ll = urlParams.get("ll");
 	if (ll) {
 		SelectModal(ll);
+		// remove ll from the url
+		urlParams.delete("ll");
+		const newUrl = window.location.origin + window.location.pathname + "?" + urlParams.toString();
+		window.history.replaceState({}, document.title, newUrl);
 	}
 };
 var ShowNameDiv = function () {
