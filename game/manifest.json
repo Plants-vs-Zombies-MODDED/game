@@ -1,20 +1,75 @@
 {
+	"name": "Plants vs. Zombies MODDED",
 	"short_name": "PVZM",
-	"name": "Plant vs. Zombies MODDED - Official",
+	"theme_color": "#01e901",
+	"background_color": "#000000",
+	"display": "standalone",
+	"orientation": "landscape",
+	"scope": "/game",
+	"start_url": "/game",
+	"description": "Play Plants vs Zombies Modded here for Free - A tower defense game created by PopCap Games and released on May 5, 2009. Click to Play now! Mod by ROBLNET13 on Github.",
 	"icons": [
 		{
-			"src": "/game/images/gameicon.png",
-			"type": "image/png",
-			"sizes": "500x500"
+			"src": "/img/16x16.png",
+			"sizes": "16x16",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/24x24.png",
+			"sizes": "24x24",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/32x32.png",
+			"sizes": "32x32",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/48x48.png",
+			"sizes": "48x48",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/64x64.png",
+			"sizes": "64x64",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/128x128.png",
+			"sizes": "128x128",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/256x256.png",
+			"sizes": "256x256",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
 		}
 	],
-	"id": "/game",
-	"start_url": "/game",
-	"background_color": "#8CEAFF",
-	"display": "standalone",
-	"scope": "/game",
-	"theme_color": "#8CEAFF",
-	"shortcuts": [{}],
-	"description": "Play Plant vs. Zombies MODDED Official as a Chrome extension - Also can Play without Internet, try it now!",
-	"screenshots": [{}]
+	"screenshots": [
+		{
+			"src": "/img/ss_13.png",
+			"sizes": "900x600",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/ss_seedpicker.png",
+			"sizes": "900x600",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/ss_stargazing.png",
+			"sizes": "900x600",
+			"type": "image/png"
+		},
+		{
+			"src": "/img/ss_wallnutbowling2.png",
+			"sizes": "900x600",
+			"type": "image/png"
+		}
+	]
 }
