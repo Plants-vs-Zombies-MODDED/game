@@ -11,6 +11,10 @@ assignees:
 **Describe the bug**
 A clear and concise description of what the bug is.
 
+**Checklist**
+- [ ] I confirmed this is related to Plants vs Zombies MODDED gameplay or repository code.
+- [ ] This report does not contain ads, unrelated links, or spam.
+
 **To Reproduce**
 Steps to reproduce the behavior:
 

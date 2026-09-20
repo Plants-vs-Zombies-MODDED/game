@@ -11,6 +11,10 @@ assignees:
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
+**Checklist**
+- [ ] This request is about Plants vs Zombies MODDED.
+- [ ] This issue does not include advertisements, unrelated links, or spam.
+
 **Describe the solution you'd like**
 A clear and concise description of what you want to happen.
 
