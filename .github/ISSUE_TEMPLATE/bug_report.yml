@@ -1,0 +1,101 @@
+name: Bug report
+description: Create a report to help us improve PVZM
+title: ""
+labels:
+  - bug
+assignees:
+  - clay-rip
+  - ROBlNET13
+body:
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I confirmed this is related to Plants vs Zombies MODDED gameplay or repository code.
+          required: true
+        - label: This report does not contain ads, unrelated links, or spam.
+          required: true
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: To Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem.
+
+  - type: input
+    id: desktop_os
+    attributes:
+      label: Desktop OS
+      placeholder: e.g. iOS
+
+  - type: input
+    id: desktop_browser
+    attributes:
+      label: Desktop browser
+      placeholder: e.g. chrome, safari
+
+  - type: input
+    id: desktop_version
+    attributes:
+      label: Desktop browser version
+      placeholder: e.g. 22
+
+  - type: input
+    id: smartphone_device
+    attributes:
+      label: Smartphone device
+      placeholder: e.g. iPhone6
+
+  - type: input
+    id: smartphone_os
+    attributes:
+      label: Smartphone OS
+      placeholder: e.g. iOS8.1
+
+  - type: input
+    id: smartphone_browser
+    attributes:
+      label: Smartphone browser
+      placeholder: e.g. stock browser, safari
+
+  - type: input
+    id: smartphone_version
+    attributes:
+      label: Smartphone browser version
+      placeholder: e.g. 22
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Add any other context about the problem here.
