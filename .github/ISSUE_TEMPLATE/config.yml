@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: General discussion
-    url: https://github.com/Plants-vs-Zombies-MODDED/game/discussions
-    about: Use discussions for chat, memes, and non-bug/non-feature topics.
+    - name: General discussion
+      url: https://github.com/Plants-vs-Zombies-MODDED/game/discussions
+      about: Use discussions for chat, memes, and non-bug/non-feature topics.
