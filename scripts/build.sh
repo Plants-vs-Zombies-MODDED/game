@@ -21,7 +21,7 @@ find . -type f \( -name "*.js" -o -name "*.css" \) \
   -not -name "CPlants.js" | \
   xargs -P4 -I{} esbuild {} \
     --minify --sourcemap \
-    --outdir=. --allow-overwrite &
+    --outfile={} --allow-overwrite &
 
 # minify html
 find . -type f -name "*.html" \
