@@ -103,29 +103,29 @@ jobs:
                   retention-days: 1
                   compression-level: 0
 
-            - name: Notify feed with a short-lived download link
-              env:
-                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  FEED_PVZM_LOXODROME_SECRET: ${{ secrets.FEED_PVZM_LOXODROME_SECRET }}
-                  ARTIFACT_ID: ${{ steps.upload_artifact.outputs.artifact-id }}
-              run: |
-                  HEADERS=$(mktemp)
-                  curl -fsS -o /dev/null -D "$HEADERS" \
-                      -H "Authorization: Bearer ${GH_TOKEN}" \
-                      -H "Accept: application/vnd.github+json" \
-                      "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip"
+            #- name: Notify feed with a short-lived download link
+            #  env:
+            #      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            #      FEED_PVZM_LOXODROME_SECRET: ${{ secrets.FEED_PVZM_LOXODROME_SECRET }}
+            #      ARTIFACT_ID: ${{ steps.upload_artifact.outputs.artifact-id }}
+            #  run: |
+            #      HEADERS=$(mktemp)
+            #      curl -fsS -o /dev/null -D "$HEADERS" \
+            #          -H "Authorization: Bearer ${GH_TOKEN}" \
+            #          -H "Accept: application/vnd.github+json" \
+            #          "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip"
 
-                  DOWNLOAD_URL=$(grep -i '^location:' "$HEADERS" | sed -E 's/^[Ll]ocation: *//' | tr -d '\r')
-                  rm -f "$HEADERS"
+            #      DOWNLOAD_URL=$(grep -i '^location:' "$HEADERS" | sed -E 's/^[Ll]ocation: *//' | tr -d '\r')
+            #      rm -f "$HEADERS"
 
-                  if [ -z "$DOWNLOAD_URL" ]; then
-                      echo "::error::Could not resolve artifact download URL"
-                      exit 1
-                  fi
-                  echo "::add-mask::$DOWNLOAD_URL"
+            #      if [ -z "$DOWNLOAD_URL" ]; then
+            #          echo "::error::Could not resolve artifact download URL"
+            #          exit 1
+            #      fi
+            #      echo "::add-mask::$DOWNLOAD_URL"
 
-                  curl -fsSL -X POST \
-                      -H "Content-Type: application/json" \
-                      --data "{\"url\": \"${DOWNLOAD_URL}\", \"token\": \"${FEED_PVZM_LOXODROME_SECRET}\"}" \
-                      https://feed-pvzm.loxodrome.app
+            #      curl -fsSL -X POST \
+            #          -H "Content-Type: application/json" \
+            #          --data "{\"url\": \"${DOWNLOAD_URL}\", \"token\": \"${FEED_PVZM_LOXODROME_SECRET}\"}" \
+            #          https://feed-pvzm.loxodrome.app
                       
