@@ -101,6 +101,7 @@ import { oBlover } from "./plants/oBlover.js";
 import { oFlamesMushroom } from "./plants/oFlamesMushroom.js";
 import { ostar } from "./plants/ostar.js";
 import { ostar1 } from "./plants/ostar1.js";
+import { oImitater } from "./plants/oImitater.js";
 
 const plants = {
 	CPlants: CPlants,
@@ -207,6 +208,7 @@ const plants = {
 	oWallNut: oWallNut,
 	ostar: ostar,
 	ostar1: ostar1,
+	oImitater: oImitater,
 };
 Object.keys(plants).forEach((plantName) => {
 	window[plantName] = plants[plantName];
